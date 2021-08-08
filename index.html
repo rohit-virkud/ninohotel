@@ -972,7 +972,7 @@
 
         <div class="swiper-slide" style="position: relative;" >
 
-          <div class="second" style="width: 100%;height: 100%" data-swiper-parallax="-100">
+          <div class="second" id="second" style="width: 100%;height: 100%" data-swiper-parallax="-100">
           <div class="second-image transitionfix " id="second-img">
             <img src="second.png" alt="img"  class="second-img" />
           </div>
@@ -996,8 +996,11 @@
           </div>
 
         </div>
+
+        
+        </div>
         <div class="swiper-slide">
-          <div class="third">
+          <div class="third" id="third">
 
             <div class="third-container">
               <div id="third-img-1" class="transitionfix" data-swiper-parallax="-200">
@@ -1026,9 +1029,8 @@
 
           </div>
         </div>
-        </div>
         <div class="swiper-slide">
-          <div class="fourth">
+          <div class="fourth" id="fourth">
 
             <div class="fourth-container">
               <div id="fourth-img-1" class="transitionfix" data-swiper-parallax="-200">
@@ -1069,7 +1071,7 @@
 
 
         <div class="swiper-slide">
-          <div class="fifth" >
+          <div class="fifth" id="fifth">
 
             <img src="white-circle.png" alt="logo-img" class="white-circle-fifth" id="white-circle-fifth" data-swiper-parallax="-200"/>
             <img src="second-btn.png" alt="logo-img" class="white-btn-fifth"  id="white-btn-fifth" data-swiper-parallax="-200"/>
@@ -1111,8 +1113,10 @@
         speed: 1000,
         parallax: true,
         cubeEffect: {
-          shadow: true,
           slideShadows: true,
+          shadow: true,
+          shadowOffset: 20,
+          shadowScale: 0.94
         },
         navigation: {
           nextEl: ".next",
@@ -1451,6 +1455,16 @@
 
         document.getElementById("white-circle-fifth").style.width = getSize(3,1.8);
         document.getElementById("white-btn-fifth").style.width = getSize(55,25);
+
+
+        document.getElementById("one").style.height = getHeight(100);
+
+        document.getElementById("second").style.height = getHeight(100);
+
+        
+       document.getElementById("third").style.height = getHeight(100);
+        document.getElementById("fourth").style.height = getHeight(100);
+         document.getElementById("fifth").style.height = getHeight(100);
 
       }
 
