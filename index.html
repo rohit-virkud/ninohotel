@@ -16,11 +16,7 @@
     />
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- Link Swiper's CSS -->
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
-    />
-
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <style type="text/css">
       * {
         margin: 0;
@@ -862,7 +858,7 @@
     <!-- Swiper -->
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <div class="swiper-slide" id="f5">
 
           <div id="one" class="one" data-swiper-parallax="-200">
            <audio id="audio">
@@ -970,7 +966,7 @@
 
 
 
-        <div class="swiper-slide" style="position: relative;" >
+        <div class="swiper-slide" id="f2" style="position: relative;" >
 
           <div class="second" id="second" style="width: 100%;height: 100%" data-swiper-parallax="-100">
           <div class="second-image transitionfix " id="second-img">
@@ -999,7 +995,7 @@
 
         
         </div>
-        <div class="swiper-slide">
+        <div class="swiper-slide" id="f3">
           <div class="third" id="third">
 
             <div class="third-container">
@@ -1029,7 +1025,7 @@
 
           </div>
         </div>
-        <div class="swiper-slide">
+        <div class="swiper-slide" id="f4">
           <div class="fourth" id="fourth">
 
             <div class="fourth-container">
@@ -1070,7 +1066,7 @@
       </div>
 
 
-        <div class="swiper-slide">
+        <div class="swiper-slide" id="f5">
           <div class="fifth" id="fifth">
 
             <img src="white-circle.png" alt="logo-img" class="white-circle-fifth" id="white-circle-fifth" data-swiper-parallax="-200"/>
@@ -1107,22 +1103,22 @@
 
     <!-- Initialize Swiper -->
     <script>
-      var swiper = new Swiper(".swiper-container", {
-        effect: "cube",
-        grabCursor: true,
-        speed: 1000,
-        parallax: true,
-        cubeEffect: {
-          slideShadows: true,
-          shadow: true,
-          shadowOffset: 20,
-          shadowScale: 0.94
-        },
-        navigation: {
-          nextEl: ".next",
-          prevEl: ".prev",
-        },
-      });
+      var swiper = new Swiper('.swiper-container', {
+      speed: 600,
+      parallax: true,
+      effect: 'cube',
+      grabCursor: true,
+      cubeEffect: {
+        shadow: false,
+        slideShadows: false,
+        shadowOffset: 20,
+        shadowScale: 0.94,
+      },
+      navigation: {
+        nextEl: '.next',
+        prevEl: '.prev'
+      }
+    });
 
        setTimeout(function () {
         $(".loader-div").fadeOut();
@@ -1135,12 +1131,15 @@
           $(".second-img").addClass("zoomOut");
           $(".third-img-01").removeClass("zoomOut");
           $(".third-img-02").removeClass("zoomOut");
+          $(".fifth").css("opacity","0");
+         
         } if (swiper.activeIndex === 2) {
           $(".third-img-01").addClass("zoomOut");
           $(".third-img-02").addClass("zoomOut");
           $(".second-img").removeClass("zoomOut");
           $(".fourth-img-01").removeClass("zoomOut");
           $(".fourth-img-02").removeClass("zoomOut");
+          $(".fifth").css("opacity","0");
         }if (swiper.activeIndex === 3) {
           $(".fourth-img-01").addClass("zoomOut");
           $(".fourth-img-02").addClass("zoomOut");
@@ -1148,6 +1147,8 @@
           $(".third-img-02").removeClass("zoomOut");
           $(".fifth-img-01").removeClass("zoomOut");
           $(".fifth-img-02").removeClass("zoomOut");
+          $(".fifth").css("opacity","1");
+          
         }if (swiper.activeIndex === 4) {
           $(".fifth-img-01").addClass("zoomOut");
           $(".fifth-img-02").addClass("zoomOut");
@@ -1455,16 +1456,18 @@
 
         document.getElementById("white-circle-fifth").style.width = getSize(3,1.8);
         document.getElementById("white-btn-fifth").style.width = getSize(55,25);
-
-
-        document.getElementById("one").style.height = getHeight(100);
-
-        document.getElementById("second").style.height = getHeight(100);
-
         
-       document.getElementById("third").style.height = getHeight(100);
+        document.getElementById("one").style.height = getHeight(100);
+        document.getElementById("second").style.height = getHeight(100);
+        document.getElementById("third").style.height = getHeight(100);
         document.getElementById("fourth").style.height = getHeight(100);
-         document.getElementById("fifth").style.height = getHeight(100);
+        document.getElementById("fifth").style.height = getHeight(100);
+
+        document.getElementById("f1").style.height = getHeight(100);
+        document.getElementById("f2").style.height = getHeight(100); 
+        document.getElementById("f3").style.height = getHeight(100);
+        document.getElementById("f4").style.height = getHeight(100);
+        document.getElementById("f5").style.height = getHeight(100);
 
       }
 
