@@ -165,11 +165,12 @@
         transform: rotateZ(270deg);
         transform-origin: top left;
         left: 6%;
-        bottom: 38%;
+        bottom:  min(70vw,35vh);;
         line-height: min(3.5vw,1.8vh);
         font-size: min(4vw,1.8vh);
         width: 85%;
         text-align: center;
+
 
       }
       .white
@@ -394,6 +395,39 @@
         
       }
 
+      .white-circle-fifth
+      {
+        position: absolute;
+        width: min(3vw,1.8vh);
+        height: auto;
+        z-index: 1;
+        top:42%;
+    
+      }
+      .white-btn-fifth
+      {
+        position: absolute;
+        width: min(55vw,25vh);
+        height: auto;
+        top:33%;
+        z-index: 1;
+    
+      }
+
+       #leftarrow5
+      {
+        position: absolute;
+        top: 3.5%;
+        left: 5%;
+         
+      }
+      #leftarrow5-top
+      {
+        position: absolute;
+        top: 3.5%;
+        right: 5%;
+      }
+
 
 
     </style>
@@ -580,13 +614,27 @@
         <div class="swiper-slide">
           <div class="fifth">
 
+            <img src="white-circle.png" alt="logo-img" class="white-circle-fifth" />
+            <img src="second-btn.png" alt="logo-img" class="white-btn-fifth" />
+
             <div id="fifth-img-1"> 
                 <img src="fifth-round.png" alt="img2" />
+                
             </div>
 
              <div id="fifth-img-2"> 
                 <img src="fifth-second.png" alt="img2" />
             </div>
+
+             <div id="leftarrow5" class="next-two prev">
+            <img src="left-arrow.png" alt="leftarrow" id="leftarrowimg5" />
+            </div>
+
+           <!-- <div id="leftarrow5-top" class="next-two next">
+              <img src="right-arrow.png" alt="leftarrow" id="leftarrowimg5-top" />
+            </div> -->
+
+
             
           </div>
         </div>
@@ -770,6 +818,8 @@
           2.5
         );
 
+
+
         
 
 
@@ -803,6 +853,16 @@
 
           document.getElementById("white-bar").style.height =
           getSize(4,2);
+
+
+          document.getElementById("leftarrowimg5").style.height = getSize(
+          4.348,
+          2.5
+        );
+        document.getElementById("leftarrowimg5-top").style.height = getSize(
+          4.348,
+          2.5
+        );
 
 
         
