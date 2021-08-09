@@ -214,6 +214,11 @@
       .swiper-slide {
         background: #fff;
       }
+      .one,.second,.third,.fourth,.fifth
+      {
+        z-index: 1;
+      }
+
       .one {
         width: 100%;
         height: 100%;
@@ -816,6 +821,7 @@
       }
 
 
+
     </style>
   </head>
 
@@ -1200,6 +1206,7 @@
           $(".third-img-01").removeClass("zoomOut");
           $(".third-img-02").removeClass("zoomOut");
           $(".fifth").css("opacity","0");
+
           
 
         } if (swiper.activeIndex === 2) {
