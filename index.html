@@ -218,10 +218,7 @@
       {
         z-index: 1;
       }
-      .white-circle3,#leftarrowimg4-top
-      {
-        z-index: 1;
-      }
+      
 
       .one {
         width: 100%;
@@ -826,6 +823,7 @@
 
 
 
+
     </style>
   </head>
 
@@ -1123,10 +1121,10 @@
 
 
        
-              <img src="white-circle.png" alt="logo-img" class="white-circle2" id="white-circle2" data-swiper-parallax="-200"/>
-              <img src="longline.png" alt="longline" id="longline" data-swiper-parallax="-200" />
-              <img src="longline.png" alt="longline" id="longline-down" data-swiper-parallax="-200"/>
-              <img src="white-circle.png" alt="logo-img" class="white-circle3" id="white-circle3" data-swiper-parallax="-200"/>
+              <img src="white-circle.png" alt="logo-img" class="white-circle2" id="white-circle2"/>
+              <img src="longline.png" alt="longline" id="longline"  />
+              <img src="longline.png" alt="longline" id="longline-down" />
+              <img src="white-circle.png" alt="logo-img" class="white-circle3" id="white-circle3"/>
              
               
             </div>
@@ -1155,7 +1153,7 @@
                 
             </div>
 
-             <div id="fifth-img-2" class="transitionfix" data-swiper-parallax="-200"> 
+             <div id="fifth-img-2" class="transitionfix"> 
                 <img src="fifth-second.png" alt="img2" class="fifth-img-02"/>
             </div>
 
@@ -1210,6 +1208,7 @@
           $(".third-img-01").removeClass("zoomOut");
           $(".third-img-02").removeClass("zoomOut");
           $(".fifth").css("opacity","0");
+         
 
           
 
@@ -1220,6 +1219,7 @@
           $(".fourth-img-01").removeClass("zoomOut");
           $(".fourth-img-02").removeClass("zoomOut");
           $(".fifth").css("opacity","0");
+
           
          
         }if (swiper.activeIndex === 3) {
@@ -1230,6 +1230,7 @@
           $(".fifth-img-01").removeClass("zoomOut");
           $(".fifth-img-02").removeClass("zoomOut");
           $(".fifth").css("opacity","1");
+         
           
           
           
@@ -1238,7 +1239,7 @@
           $(".fifth-img-02").addClass("zoomOut");
           $(".fourth-img-01").removeClass("zoomOut");
           $(".fourth-img-02").removeClass("zoomOut");
-          $(".fourth").css("opacity","1");
+     
         }
       }, 100);
 
