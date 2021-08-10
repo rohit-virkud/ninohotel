@@ -220,13 +220,38 @@
          -webkit-box-align: center;
          -ms-flex-align: center;
          align-items: center;
+         
+         }
+         .tc1{
          -webkit-transform:translateX(50%);
          -ms-transform:translateX(50%);
          transform:translateX(50%);
-         -webkit-transition: 1s all ease-in-out;
-         -o-transition: 1s all ease-in-out;
-         transition: 1s all ease-in-out;
-         }
+         -webkit-transition: 1s all ease-out;
+         -o-transition: 1s all ease-out;
+         transition: 1s all ease-out;
+          }
+
+         .tc2{
+         -webkit-transform:translateX(50%);
+         -ms-transform:translateX(50%);
+         transform:translateX(50%);
+         -webkit-transition: 0.8s all ease-out;
+         -o-transition: 0.8s all ease-out;
+         transition: 0.8s all ease-out;
+          }
+
+         .tc3
+         {
+         -webkit-transform:translateX(50%);
+         -ms-transform:translateX(50%);
+         transform:translateX(50%);
+         -webkit-transition: 0.6s all ease-out;
+         -o-transition: 0.6s all ease-out;
+         transition: 0.6s all ease-out;
+
+         } 
+
+
          .transl{
          -webkit-transform:translateX(0%);
          -ms-transform:translateX(0%);
@@ -249,6 +274,8 @@
          letter-spacing: 0.1em;
          text-transform: uppercase;
          color: #181e2a;
+         width: 50%;
+         text-align: center;
          }
          #divider {
          background: url("gold-textured-background.png") no-repeat;
@@ -320,15 +347,13 @@
          font-family: Bellefair;
          font-style: normal;
          font-weight: normal;
-         -webkit-transform: rotateZ(270deg);
-         -ms-transform: rotate(270deg);
-         transform: rotateZ(270deg);
          -webkit-transform-origin: top left;
          -ms-transform-origin: top left;
          transform-origin: top left;
          left: 6%;
          width: 85%;
          text-align: center;
+         transform: translate3d(0px, 0px, 0px) rotate(270deg) !important;
          }
          .white
          {
@@ -793,6 +818,7 @@
         width: 100%;
         height: 100%;
       }
+      
 
       </style>
    </head>
@@ -892,6 +918,7 @@
                   id="qr-img"
                   />
             </div>
+
          </div>
       </div>
       <!-- Swiper -->
@@ -900,26 +927,26 @@
          <div class="swiper-slide" id="f1">
             <div class="one-wrapper" data-swiper-parallax="-200">
                <div id="one" class="one" >
-                  <div class="arrow arrow-first next"></div>
-                  <div class="arrow arrow-second next"></div>
+                  <div class="arrow arrow-first next tc1" ></div>
+                  <div class="arrow arrow-second next tc1"></div>
                   <audio id="audio">
                      <source
-                        src="WhatsApp Audio 2021-08-09 at 1.38.11 PM.mpeg"
+                        src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/WhatsApp Audio 2021-08-09 at 1.38.11 PM.mpeg"
                         type="audio/mpeg"
                         />
                   </audio>
-                  <div id="social-wrapper">
-                     <a href="https://www.facebook.com/LoungeBeachScaladeiTurchi/" target="_blank" id="social1"><img src="fb.png" alt="social" id="social1-img"
+                  <div id="social-wrapper" class="tc2">
+                     <a href="https://www.facebook.com/LoungeBeachScaladeiTurchi/" target="_blank" id="social1"><img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fb.png" alt="social" id="social1-img"
                         /></a>
-                     <a href="https://www.instagram.com/lounge_beach_scala_dei_turchi/?utm_medium=copy_link" target="_blank" id="social2"><img src="insta.png" alt="social" id="social2-img"
+                     <a href="https://www.instagram.com/lounge_beach_scala_dei_turchi/?utm_medium=copy_link" target="_blank" id="social2"><img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/insta.png" alt="social" id="social2-img"
                         /></a>
                   </div>
-                  <img src="share-btn.png" id="sharebtn" alt="social" onclick="openSlide()"/>
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/share-btn.png" id="sharebtn" alt="social" class="tc2" onclick="openSlide()"/>
                   <lottie-player
                      src="https://raw.githubusercontent.com/rohit-virkud/template02-light/main/hj.json"
                      background="transparent"
                      speed="1"
-                     class="lottie-anim"
+                     class="lottie-anim tc1"
                      id="lottie"
                      onclick="play2()"
                      loop
@@ -933,14 +960,14 @@
                      "
                      ></lottie-player>
                  
-                  <img src="logo.png" id="logo" alt="logo"/>
-                  <h1 id="name" >NINO SANFILIPPO</h1>
-                  <p id="tag" >Owner</p>
-                  <div id="divider"></div>
-                  <div class="contact-wrapper" id="contact-wrapper" >
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/logo.png" id="logo" alt="logo" class="tc3"/>
+                  <h1 id="name" class="tc3">NINO SANFILIPPO</h1>
+                  <p id="tag" class="tc3">Owner</p>
+                  <div id="divider" class="tc3"></div>
+                  <div class="contact-wrapper tc3" id="contact-wrapper" >
                      <a href="tel:+39 393 9618010" class="contact-container" id="contact-container1">
                         <img
-                           src="phone-icon.png"
+                           src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/phone-icon.png"
                            alt="icon"
                            class="phone-icon"
                            id="icon1"
@@ -949,7 +976,7 @@
                      </a>
                      <a href="tel:+39 3313597864" class="contact-container" id="contact-container2">
                         <img
-                           src="home-icon.png"
+                           src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/home-icon.png"
                            alt="icon"
                            class="phone-icon"
                            id="icon2"
@@ -958,7 +985,7 @@
                      </a>
                      <a href="mailto:info@lbscaladeiturchi.com" class="contact-container" id="contact-container3">
                         <img
-                           src="msg-icon.png"
+                           src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/msg-icon.png"
                            alt="icon"
                            class="phone-icon"
                            id="icon3"
@@ -967,7 +994,7 @@
                      </a>
                      <a href="https://maps.google.com/?q=Stada provinciale 68 92010 Realmonte (AG)" class="contact-container" target="_blank" id="contact-container4">
                         <img
-                           src="location-icon.png"
+                           src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/location-icon.png"
                            alt="icon"
                            class="phone-icon"
                            id="icon4"
@@ -978,7 +1005,7 @@
                      </a>
                      <a href="https://www.lbscaladeiturchi.com/" target="_blank"  class="contact-container" id="contact-container5">
                         <img
-                           src="web-icon.png"
+                           src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/web-icon.png"
                            alt="icon"
                            class="phone-icon"
                            id="icon5"
@@ -986,8 +1013,8 @@
                         <p class="icon-tag" id="icon-tag-5">www.lbscaladeiturchi.com</p>
                      </a>
                   </div>
-                  <a href="#!">
-                  <img src="btn.png" alt="icon" id="primary-btn" />
+                  <a href="#!" class="tc2">
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/btn.png" alt="icon" id="primary-btn" />
                   </a>
                </div>
             </div>
@@ -995,23 +1022,23 @@
          <div class="swiper-slide" id="f2" style="position: relative;" >
             <div class="second" id="second" style="width: 100%;height: 100%" data-swiper-parallax="-100">
                <div class="second-image transitionfix " id="second-img" >
-                  <img src="second.png" alt="img"  class="second-img" />
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/second.png" alt="img"  class="second-img" />
                </div>
                
                <div id="white-bar"></div>
               
-               <p id="quote" >the Lounge Beach Scala dei Turchi is a location that perfectly integrates with the surrounding paradise, the sea, the sun and the famous seaside resort of Agrigento.</p>
+               <p id="quote"  data-swiper-parallax="-100">the Lounge Beach Scala dei Turchi is a location that perfectly integrates with the surrounding paradise, the sea, the sun and the famous seaside resort of Agrigento.</p>
           
-               <img src="white-circle.png" alt="logo-img" class="white-circle"  id="white-circle" />
-               <img src="second-btn.png" alt="logo-img" class="white-btn" id="white-btn"/>
-               <img src="white-logo.png" alt="logo-img" class="white" id="white"/>
-               <img src="rectangle-left.png" alt="logo-img" class="rect" id="rect-left"/>
-               <img src="rectangle-right.png" alt="logo-img" class="rect-right" id="rect-right" />
+               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png" alt="logo-img" class="white-circle"  id="white-circle" />
+               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/second-btn.png" alt="logo-img" class="white-btn" id="white-btn"/>
+               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-logo.png" alt="logo-img" class="white" id="white"/>
+               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-left.png" alt="logo-img" class="rect" id="rect-left"/>
+               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-right.png" alt="logo-img" class="rect-right" id="rect-right" />
                <div id="leftarrow2" class="next-two prev">
-                  <img src="left-arrow.png" alt="leftarrow" id="leftarrowimg2" />
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png" alt="leftarrow" id="leftarrowimg2" />
                </div>
                <div id="leftarrow2-top" class="next-two next">
-                  <img src="right-arrow.png" alt="leftarrow" id="leftarrowimg2-top" />
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png" alt="leftarrow" id="leftarrowimg2-top" />
                </div>
             </div>
          </div>
@@ -1019,20 +1046,20 @@
             <div class="third" id="third">
                <div class="third-container">
                   <div id="third-img-1" class="transitionfix" data-swiper-parallax="-200">
-                     <img src="third-img-01.png" alt="img1"  class="third-img-01" />
+                     <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/third-img-01.png" alt="img1"  class="third-img-01" />
                   </div>
                   <div id="third-contx" data-swiper-parallax="-300">
                      <h1 id="third-txt">From the sea to the table</h1>
                   </div>
                   <div id="third-img-2" class="transitionfix" data-swiper-parallax="-200"> 
-                     <img src="third-img-02.png" alt="img1" class="third-img-02" />
+                     <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/third-img-02.png" alt="img1" class="third-img-02" />
                   </div>
                </div>
                <div id="leftarrow3" class="next-two next">
-                  <img src="right-arrow.png" alt="leftarrow" id="leftarrowimg3" />
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png" alt="leftarrow" id="leftarrowimg3" />
                </div>
                <div id="leftarrow3-top" class="next-two prev">
-                  <img src="left-arrow.png" alt="leftarrow" id="leftarrowimg3-top" />
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png" alt="leftarrow" id="leftarrowimg3-top" />
                </div>
             </div>
          </div>
@@ -1040,39 +1067,39 @@
             <div class="fourth" id="fourth">
                <div class="fourth-container">
                   <div id="fourth-img-1" class="transitionfix" data-swiper-parallax="-200">
-                     <img src="fourth-img-01.png" alt="img1"  class="fourth-img-01" />
+                     <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fourth-img-01.png" alt="img1"  class="fourth-img-01" />
                   </div>
                   <div id="fourth-contx" data-swiper-parallax="-300">
                      <h1 id="fourth-txt">Carefully sourced and selected champagnes, wines AND tailored drinks</h1>
                   </div>
                   <div id="fourth-img-2" class="transitionfix" data-swiper-parallax="-200"> 
-                     <img src="fourth-img-02.png" alt="img2"  class="fourth-img-02"/>
+                     <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fourth-img-02.png" alt="img2"  class="fourth-img-02"/>
                   </div>
-                  <img src="white-circle.png" alt="logo-img" class="white-circle2" id="white-circle2"/>
-                  <img src="longline.png" alt="longline" id="longline"  />
-                  <img src="longline.png" alt="longline" id="longline-down" />
-                  <img src="white-circle.png" alt="logo-img" class="white-circle3" id="white-circle3"/>
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png" alt="logo-img" class="white-circle2" id="white-circle2"/>
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/longline.png" alt="longline" id="longline"  />
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/longline.png" alt="longline" id="longline-down" />
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png" alt="logo-img" class="white-circle3" id="white-circle3"/>
                </div>
                <div id="leftarrow4" class="next-two prev">
-                  <img src="left-arrow.png" alt="leftarrow" id="leftarrowimg4" />
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png" alt="leftarrow" id="leftarrowimg4" />
                </div>
                <div id="leftarrow4-top" class="next-two next">
-                  <img src="right-arrow.png" alt="leftarrow" id="leftarrowimg4-top" />
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png" alt="leftarrow" id="leftarrowimg4-top" />
                </div>
             </div>
          </div>
          <div class="swiper-slide" id="f5">
             <div class="fifth" id="fifth">
-               <img src="white-circle.png" alt="logo-img" class="white-circle-fifth" id="white-circle-fifth" data-swiper-parallax="-200"/>
-               <img src="fifth-btn.png" alt="logo-img" class="white-btn-fifth"  id="white-btn-fifth" data-swiper-parallax="-200"/>
+               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png" alt="logo-img" class="white-circle-fifth" id="white-circle-fifth" data-swiper-parallax="-200"/>
+               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-btn.png" alt="logo-img" class="white-btn-fifth"  id="white-btn-fifth" data-swiper-parallax="-200"/>
                <div id="fifth-img-1" class="transitionfix" data-swiper-parallax="-200"> 
-                  <img src="fifth-round.png" alt="img2" class="fifth-img-01" />
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-round.png" alt="img2" class="fifth-img-01" />
                </div>
-               <div id="fifth-img-2" class="transitionfix" data-swiper-parallax="-200"> 
-                  <img src="fifth-second.png" alt="img2" class="fifth-img-02"/>
+               <div id="fifth-img-2" class="transitionfix" data-swiper-parallax="-400"> 
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-second.png" alt="img2" class="fifth-img-02"/>
                </div>
                <div id="leftarrow5" class="next-two prev">
-                  <img src="left-arrow.png" alt="leftarrow" id="leftarrowimg5" />
+                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png" alt="leftarrow" id="leftarrowimg5" />
                </div>
                <!-- <div id="leftarrow5-top" class="next-two next">
                   <img src="right-arrow.png" alt="leftarrow" id="leftarrowimg5-top" />
@@ -1104,7 +1131,9 @@
          
           setTimeout(function () {
            $(".loader-div").fadeOut();
-           $(".one").addClass("transl");
+           $(".tc1").addClass("transl");
+           $(".tc2").addClass("transl");
+           $(".tc3").addClass("transl");
            
          }, 2000);
          
