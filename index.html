@@ -1115,9 +1115,12 @@
       <!-- Initialize Swiper -->
       <script>
          var swiper = new Swiper('.swiper-container', {
-         effect: 'cube',
+               effect: 'cube',
+               observer: true,
+               observeParents: true,
                grabCursor: true,
                cubeEffect: {
+                 
                  shadow: false,
                  slideShadows: true,
                  shadowOffset: 20,
