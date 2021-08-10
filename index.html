@@ -344,15 +344,14 @@
          }
          #quote
          {
-         position: absolute;
+         
          font-family: Bellefair;
          font-style: normal;
          font-weight: normal;
          -webkit-transform-origin: top left;
          -ms-transform-origin: top left;
          transform-origin: top left;
-         left: 6%;
-         width: 85%;
+         
          text-align: center;
          transform: translate3d(0px, 0px, 0px) rotate(270deg) !important;
          }
@@ -1028,13 +1027,15 @@
                
                <div id="white-bar"></div>
               
-               <p id="quote"  data-swiper-parallax="-100">the Lounge Beach Scala dei Turchi is a location that perfectly integrates with the surrounding paradise, the sea, the sun and the famous seaside resort of Agrigento.</p>
-          
-               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png" alt="logo-img" class="white-circle"  id="white-circle" />
-               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/second-btn.png" alt="logo-img" class="white-btn" id="white-btn"/>
-               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-logo.png" alt="logo-img" class="white" id="white"/>
-               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-left.png" alt="logo-img" class="rect" id="rect-left"/>
-               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-right.png" alt="logo-img" class="rect-right" id="rect-right" />
+               <div data-swiper-parallax="-100" style="position: absolute;left: 6%;
+               width: 85%;bottom: 38%;">
+               <p id="quote"  >the Lounge Beach Scala dei Turchi is a location that perfectly integrates with the surrounding paradise, the sea, the sun and the famous seaside resort of Agrigento.</p>
+               </div>
+               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png" alt="logo-img" class="white-circle"  id="white-circle" data-swiper-parallax="-100" />
+               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/second-btn.png" alt="logo-img" class="white-btn" id="white-btn" data-swiper-parallax="-200"/>
+               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-logo.png" alt="logo-img" class="white" id="white" data-swiper-parallax="-100"/>
+               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-left.png" alt="logo-img" class="rect" id="rect-left" data-swiper-parallax="-100"/>
+               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-right.png" alt="logo-img" class="rect-right" id="rect-right" data-swiper-parallax="-100"/>
                <div id="leftarrow2" class="next-two prev">
                   <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png" alt="leftarrow" id="leftarrowimg2" />
                </div>
@@ -1502,7 +1503,7 @@
            document.getElementById("lottie").style.width = getSize(7, 4.5);
            document.getElementById("lottie").style.height = getSize(7, 4.5);
          
-           document.getElementById("quote").style.bottom = getSize(70, 35);
+   
            document.getElementById("quote").style.lineHeight = getSize(3.5, 1.8);
            document.getElementById("quote").style.fontSize = getSize(4, 1.8);
          
