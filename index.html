@@ -1,1586 +1,1422 @@
-<!DOCTYPE html>
-<html lang="en">
-   <head>
-      <meta charset="utf-8" />
-      <title>Nino Sanfilippo</title>
-      <meta
-      name="viewport"
-      content="height=device-height, 
-      width=device-width, initial-scale=1.0, 
-      minimum-scale=1.0, maximum-scale=1.0, 
-      user-scalable=no, target-densitydpi=device-dpi"
-    />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <meta
-         http-equiv="Cache-Control"
-         content="no-cache, no-store, must-revalidate"
-         />
-      <meta http-equiv="pragma" content="no-cache" />
-      <meta http-equiv="expires" content="0" />
-      <meta property="og:title" content="Nino Sanfilippo" />
-      <meta property="og:description" content="Owner" />
-      <meta
-         property="og:image"
-         content="https://m.artcoolcards.com/nino-sanfilippo/media/share-image.jpg"
-         />
-      <link
-         href="https://fonts.googleapis.com/css2?family=Bellefair&family=Cormorant:wght@600&family=Montserrat:wght@400;500;600;700&family=Roboto:wght@700&display=swap"
-         rel="stylesheet"
-         />
-      <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-      <!-- Link Swiper's CSS -->
-      <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.css"
-    />
-      <style type="text/css">
-         * {
-         margin: 0;
-         padding: 0;
-       position: relative;
-         -webkit-box-sizing: border-box;
-         box-sizing: border-box;
-         font-family: "Bellefair", serif;
-         font-family: "Cormorant", serif;
-         font-family: "Montserrat", sans-serif;
-         font-family: "Roboto", sans-serif;
-         }
-         html,body
-         {
-           width: 100%;
-           height: 100%;
-             position: fixed;
+import React from "react";
+import { useEffect, useState } from "react";
+import styled, { createGlobalStyle } from "styled-components";
+import $ from "jquery";
+import Swiper from "swiper/bundle";
+import "swiper/swiper-bundle.css";
 
-           
-         }
-         
-         a,
-         a:hover,
-         a:focus,
-         a:active {
-         text-decoration: none;
-         color: inherit;
-         }
-         img {
-         width: 100%;
-         height: 100%;
-         }
-         
-         /*Loader*/
-         .loader-div {
-         width: 100%;
-         height: 100%;
-         position: fixed;
-         background: white;
-         text-align: center;
-         z-index: 999;
-         }
-         .loader-div h1 {
-         margin: 0;
-         padding: 0;
-         font-weight: 300;
-         font-size: 4vw;
-         color: #e4b464;
-         position: absolute;
-         top: 40%;
-         left: 50%;
-         -webkit-transform: translate(-50%, -50%);
-         -ms-transform: translate(-50%, -50%);
-         transform: translate(-50%, -50%);
-         }
-         .loader-div h1 span {
-         position: relative;
-         top: 0.63em;
-         display: inline-block;
-         text-transform: uppercase;
-         opacity: 0;
-         -webkit-transform: rotateX(-90deg);
-         transform: rotateX(-90deg);
-         }
-         .loader-div h1 .let1 {
-         -webkit-animation: drop 1.2s ease-in-out infinite;
-         animation: drop 1.2s ease-in-out infinite;
-         -webkit-animation-delay: 1.2s;
-         animation-delay: 1.2s;
-         }
-         .loader-div h1 .let2 {
-         -webkit-animation: drop 1.2s ease-in-out infinite;
-         animation: drop 1.2s ease-in-out infinite;
-         -webkit-animation-delay: 1.3s;
-         animation-delay: 1.3s;
-         }
-         .loader-div h1 .let3 {
-         -webkit-animation: drop 1.2s ease-in-out infinite;
-         animation: drop 1.2s ease-in-out infinite;
-         -webkit-animation-delay: 1.4s;
-         animation-delay: 1.4s;
-         }
-         .loader-div h1 .let4 {
-         -webkit-animation: drop 1.2s ease-in-out infinite;
-         animation: drop 1.2s ease-in-out infinite;
-         -webkit-animation-delay: 1.5s;
-         animation-delay: 1.5s;
-         }
-         .loader-div h1 .let5 {
-         -webkit-animation: drop 1.2s ease-in-out infinite;
-         animation: drop 1.2s ease-in-out infinite;
-         -webkit-animation-delay: 1.6s;
-         animation-delay: 1.6s;
-         }
-         .loader-div h1 .let6 {
-         -webkit-animation: drop 1.2s ease-in-out infinite;
-         animation: drop 1.2s ease-in-out infinite;
-         -webkit-animation-delay: 1.7s;
-         animation-delay: 1.7s;
-         }
-         .loader-div h1 .let7 {
-         -webkit-animation: drop 1.2s ease-in-out infinite;
-         animation: drop 1.2s ease-in-out infinite;
-         -webkit-animation-delay: 1.8s;
-         animation-delay: 1.8s;
-         }
-         @-webkit-keyframes drop {
-         10% {
-         opacity: 0.5;
-         }
-         20% {
-         opacity: 1;
-         top: 3.78em;
-         -webkit-transform: rotateX(-360deg);
-         transform: rotateX(-360deg);
-         }
-         80% {
-         opacity: 1;
-         top: 3.78em;
-         -webkit-transform: rotateX(-360deg);
-         transform: rotateX(-360deg);
-         }
-         90% {
-         opacity: 0.5;
-         }
-         100% {
-         opacity: 0;
-         top: 6.94em;
-         }
-         }
-         @keyframes drop {
-         10% {
-         opacity: 0.5;
-         }
-         20% {
-         opacity: 1;
-         top: 3.78em;
-         -webkit-transform: rotateX(-360deg);
-         transform: rotateX(-360deg);
-         }
-         80% {
-         opacity: 1;
-         top: 3.78em;
-         -webkit-transform: rotateX(-360deg);
-         transform: rotateX(-360deg);
-         }
-         90% {
-         opacity: 0.5;
-         }
-         100% {
-         opacity: 0;
-         top: 6.94em;
-         }
-         }
-         /*end loader*/
-         .swiper-container {
-         width: 100%;
-         height: 100%;
-         position: absolute;
-         left: 50%;
-         margin-left: -50%;
-         color: white;
-         }
-         
-        
-         .swiper-slide {
-         background: #fff;
-         width: 100% !important;
-         height: 100% !important;
-         }
-         cond,.third,.fourth,.fifth
-         {
-         z-index: 1;
-         }
-         .one {
-         width: 100%;
-         height: 100%;
-         background-color: #fff;
-         color: black;
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -ms-flex-negative: 0;
-         flex-shrink: 0;
-         -webkit-box-orient: vertical;
-         -webkit-box-direction: normal;
-         -ms-flex-direction: column;
-         flex-direction: column;
-         -webkit-box-pack: center;
-         -ms-flex-pack: center;
-         justify-content: center;
-         -webkit-box-align: center;
-         -ms-flex-align: center;
-         align-items: center;
-         
-         }
-
-         .one,.second,.third,.fourth,.fifth
-         {
-           width: 100%;
-           height: 100%;
-          
-          
-         }
-         .one-wrapper
-         {
-           width: 100%;
-           height: 100%;
-           position: relative;
-         }
-         .tc1{
-         -webkit-transform:translateX(50%);
-         -ms-transform:translateX(50%);
-         transform:translateX(50%);
-         -webkit-transition: 1s all ease-out;
-         -o-transition: 1s all ease-out;
-         transition: 1s all ease-out;
-          }
-
-         .tc2{
-         -webkit-transform:translateX(50%);
-         -ms-transform:translateX(50%);
-         transform:translateX(50%);
-         -webkit-transition: 0.8s all ease-out;
-         -o-transition: 0.8s all ease-out;
-         transition: 0.8s all ease-out;
-          }
-
-         .tc3
-         {
-         -webkit-transform:translateX(50%);
-         -ms-transform:translateX(50%);
-         transform:translateX(50%);
-         -webkit-transition: 0.6s all ease-out;
-         -o-transition: 0.6s all ease-out;
-         transition: 0.6s all ease-out;
-
-         } 
-
-
-         .transl{
-         -webkit-transform:translateX(0%);
-         -ms-transform:translateX(0%);
-         transform:translateX(0%);
-         }
-         #logo {
-         }
-         #name {
-         font-family: "Cormorant", serif;
-         font-style: normal;
-         font-weight: 600;
-         /* or 75% */
-         letter-spacing: 0.05em;
-         text-transform: uppercase;
-         }
-         #tag {
-         font-family: "Roboto", sans-serif;
-         font-style: normal;
-         font-weight: bold;
-         letter-spacing: 0.1em;
-         text-transform: uppercase;
-         color: #181e2a;
-         width: 50%;
-         text-align: center;
-         }
-         #divider {
-         background: url("gold-textured-background.png") no-repeat;
-         }
-         .contact-container {
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -ms-flex-negative: 0;
-         flex-shrink: 0;
-         -webkit-box-align: center;
-         -ms-flex-align: center;
-         align-items: center;
-         }
-         .phone-icon {
-         height: auto;
-         }
-         .icon-tag {
-         font-family: "Montserrat", sans-serif;
-         font-style: normal;
-         font-weight: 400;
-         }
-         #primary-btn {
-         height: auto;
-         }
-         #social-wrapper {
-         position: absolute;
-         top: 2%;
-         left: 2%;
-         }
-         #sharebtn {
-         position: absolute;
-         top: 2.5%;
-         right: 4%;
-         }
-         #leftarrow {
-         position: absolute;
-         bottom: 3%;
-         right: 8%;
-         }
-         .second {
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -ms-flex-negative: 0;
-         flex-shrink: 0;
-         -webkit-box-pack: center;
-         -ms-flex-pack: center;
-         justify-content: center;
-         -webkit-box-align: center;
-         -ms-flex-align: center;
-         align-items: center;
-         }
-         .second-image {
-         width: 95%;
-         height: 95%;
-         overflow: hidden;
-         }
-         #white-bar
-         {
-         position: absolute;
-         width: 95%;
-         background: white;
-         top: 65%;
-         }
-         #quote
-         {
-         
-         font-family: Bellefair;
-         font-style: normal;
-         font-weight: normal;
-         -webkit-transform-origin: top left;
-         -ms-transform-origin: top left;
-         transform-origin: top left;
-         
-         text-align: center;
-         transform: translate3d(0px, 0px, 0px) rotate(270deg) !important;
-         }
-         .white
-         {
-         position: absolute;
-         height: auto;
-         bottom: 5%;
-         }
-         .white-btn
-         {
-         position: absolute;
-         height: auto;
-         bottom: 18%;
-         }
-         .white-circle
-         {
-         position: absolute;
-         height: auto;
-         bottom: 28%;
-         }
-         .rect
-         {
-         position: absolute;
-         height: 6%;
-         left:6%;
-         bottom: 18%;
-         }
-         .rect-right
-         {
-         position: absolute;
-         height: 6%;
-         right:6%;
-         bottom: 18%;
-         }
-         #leftarrow2 {
-         position: absolute;
-         bottom: 3.5%;
-         left: 5%;
-         }
-         #leftarrow2-top{
-         position: absolute;
-         top: 3.5%;
-         right: 5%;
-         }
-         .third,.fourth
-         {
-         width: 100%;
-         height: 100%;
-         background: url('third-img.png')no-repeat;
-         background-size: cover;
-         background-position: center;
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -webkit-box-pack: center;
-         -ms-flex-pack: center;
-         justify-content: center;
-         -webkit-box-align: center;
-         -ms-flex-align: center;
-         align-items: center;
-         }
-         .fourth
-         {
-         background: #E7F9FD;
-         }
-         .third-container,.fourth-container
-         {
-         width: 95%;
-         height: 95%;
-         }
-         #third-img-1,#fourth-img-1
-         {
-         width: 100%;
-         height: 42%;
-         overflow: hidden;
-         }
-         #third-img-2,#fourth-img-2
-         {
-         width: 100%;
-         height: 42%;
-         overflow: hidden;
-         }
-         #third-contx,#fourth-contx
-         {
-         width: 100%;
-         height: 16%;
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -ms-flex-negative: 0;
-         flex-shrink: 0;
-         -webkit-box-align: center;
-         -ms-flex-align: center;
-         align-items: center;
-         }
-         #third-txt,#fourth-txt
-         {
-         font-family: Montserrat;
-         font-style: normal;
-         font-weight: normal;
-         line-height: 125%;
-         /* or 125% */
-         text-transform: uppercase;
-         color: #8C533B;
-         width: 35%;
-         }
-         #fourth-txt
-         {
-         width: 70%;
-         }
-         #leftarrow3
-         {
-         position: absolute;
-         top: 4%;
-         right: 5%;
-         }
-         #leftarrow3-top
-         {
-         position: absolute;
-         bottom: 3.5%;
-         left: 5%;
-         }
-         #leftarrow4
-         {
-         position: absolute;
-         top: 3.5%;
-         left: 5%;
-         }
-         #leftarrow4-top
-         {
-         position: absolute;
-         bottom: 3.5%;
-         right: 5%;
-         }
-         #longline
-         {
-         position: absolute;
-         width: 0.4%;
-         height: 35%;
-         top: 10%;
-         right: 6%;
-         -webkit-transform: rotate(0deg);
-         -ms-transform: rotate(0deg);
-         transform: rotate(0deg);
-         }
-         #longline-down
-         {
-         position: absolute;
-         width: 0.4%;
-         height: 35%;
-         bottom: 10%;
-         left: 6%;
-         -webkit-transform: rotate(0deg);
-         -ms-transform: rotate(0deg);
-         transform: rotate(0deg);
-         }
-         .white-circle2    
-         {
-         position: absolute;
-         height: auto;
-         top: 6%;
-         right: 5%;
-         }
-         .white-circle3  
-         {
-         position: absolute;
-         ;
-         height: auto;
-         bottom: 6%;
-         left: 5%;
-         }
-         .fifth
-         {
-         background: #F3EDE2;
-         width: 100%;
-         height: 100%;
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -webkit-box-orient: vertical;
-         -webkit-box-direction: normal;
-         -ms-flex-direction: column;
-         flex-direction: column;
-         -webkit-box-pack: center;
-         -ms-flex-pack: center;
-         justify-content: center;
-         -webkit-box-align: center;
-         -ms-flex-align: center;
-         align-items: center;
-         }
-         #fifth-img-1
-         {
-         overflow: hidden;
-         border-radius: 50%;
-         position: absolute;
-         top: 2%;
-         }
-         #fifth-img-2
-         {
-         overflow: hidden;
-         border-top-left-radius:50%;
-         border-top-right-radius:50%;
-         position: absolute;
-         bottom: 0;
-         }
-         .white-circle-fifth
-         {
-         position: absolute;
-         height: auto;
-       
-         top:42%;
-         }
-         .white-btn-fifth
-         {
-         position: absolute;
-         height: auto;
-         top:33%;
-        
-         }
-         #leftarrow5
-         {
-         position: absolute;
-         top: 3.5%;
-         left: 5%;
-         }
-         #leftarrow5-top
-         {
-         position: absolute;
-         top: 3.5%;
-         right: 5%;
-         }
-         .second-img,.third-img-01,.third-img-02,.fourth-img-01,.fourth-img-02,.fifth-img-01,.fifth-img-02
-         {
-         z-index: -1;
-         -webkit-transform: scale(1.2);
-         -ms-transform: scale(1.2);
-         transform: scale(1.2);
-         -webkit-transition: 5s -webkit-transform ease-out;
-         transition: 5s -webkit-transform ease-out;
-         -o-transition: 5s transform ease-out;
-         transition: 5s transform ease-out;
-         transition: 5s transform ease-out, 5s -webkit-transform ease-out;
-         }
-         .zoomOut
-         {
-         -webkit-transform: scale(1);
-         -ms-transform: scale(1);
-         transform: scale(1);
-         }
-         .transitionfix {
-         -webkit-backface-visibility: hidden;
-         -moz-backface-visibility: hidden;
-         
-         }
-         /*share slide*/
-         .share-slide {
-         position: fixed;
-         width: 100%;
-         height: 100%;
-         overflow: hidden;
-         background: -o-linear-gradient(top, #dcb06b 0%, #be9160 100%);
-         background: -webkit-gradient(linear, left top, left bottom, from(#dcb06b), to(#be9160));
-         background: linear-gradient(180deg, #dcb06b 0%, #be9160 100%);
-         /* mix-blend-mode: normal;
-         backdrop-filter: blur(30px);*/
-         z-index: 222;
-         -webkit-transform: translateX(-100%);
-         -ms-transform: translateX(-100%);
-         transform: translateX(-100%);
-         -webkit-transition: -webkit-transform 1s ease-out;
-         transition: -webkit-transform 1s ease-out;
-         -o-transition: transform 1s ease-out;
-         transition: transform 1s ease-out;
-         transition: transform 1s ease-out, -webkit-transform 1s ease-out;
-         }
-         .share-slide .close-icon {
-         position: absolute;
-         top: 4%;
-         right: 7%;
-         }
-         .share-slide-share-icons {
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -webkit-box-orient: vertical;
-         -webkit-box-direction: normal;
-         -ms-flex-direction: column;
-         flex-direction: column;
-         -webkit-box-align: center;
-         -ms-flex-align: center;
-         align-items: center;
-         -ms-flex-negative: 0;
-         flex-shrink: 0;
-         position: fixed;
-         top: 50%;
-         left: 50%;
-         /* bring your own prefixes */
-         -webkit-transform: translate(-50%, -50%);
-         -ms-transform: translate(-50%, -50%);
-         transform: translate(-50%, -50%);
-         }
-         .share-headline {
-         color: #ffffff;
-         -webkit-transform: translateX(-80%);
-         -ms-transform: translateX(-80%);
-         transform: translateX(-80%);
-         -webkit-transition: -webkit-transform 1s ease-out;
-         transition: -webkit-transform 1s ease-out;
-         -o-transition: transform 1s ease-out;
-         transition: transform 1s ease-out;
-         transition: transform 1s ease-out, -webkit-transform 1s ease-out;
-         }
-         .scan-and-save-txt {
-         color: #ffffff;
-         margin-top: 30%;
-         -webkit-transform: translateX(-80%);
-         -ms-transform: translateX(-80%);
-         transform: translateX(-80%);
-         -webkit-transition: -webkit-transform 1s ease-out;
-         transition: -webkit-transform 1s ease-out;
-         -o-transition: transform 1s ease-out;
-         transition: transform 1s ease-out;
-         transition: transform 1s ease-out, -webkit-transform 1s ease-out;
-         }
-         .icon-grid {
-         display: -ms-grid;
-         display: grid;
-         width: 100%;
-         -ms-grid-columns: 11vw 11vw 11vw 11vw;
-         grid-template-columns: 11vw 11vw 11vw 11vw;
-         -webkit-box-pack: center;
-         -ms-flex-pack: center;
-         justify-content: center;
-         -webkit-transform: translateX(-40%);
-         -ms-transform: translateX(-40%);
-         transform: translateX(-40%);
-         -webkit-transition: -webkit-transform 1s ease-out;
-         transition: -webkit-transform 1s ease-out;
-         -o-transition: transform 1s ease-out;
-         transition: transform 1s ease-out;
-         transition: transform 1s ease-out, -webkit-transform 1s ease-out;
-         }
-         .icon-grid a {
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -webkit-box-pack: center;
-         -ms-flex-pack: center;
-         justify-content: center;
-         -webkit-box-align: center;
-         -ms-flex-align: center;
-         align-items: center;
-         -ms-flex-negative: 0;
-         flex-shrink: 0;
-         }
-         .qr-code-wrapper {
-         width: 100%;
-         height: 50vh;
-         display: -webkit-box;
-         display: -ms-flexbox;
-         display: flex;
-         -webkit-box-orient: vertical;
-         -webkit-box-direction: normal;
-         -ms-flex-direction: column;
-         flex-direction: column;
-         -ms-flex-negative: 0;
-         flex-shrink: 0;
-         color: #ffffff;
-         -webkit-box-align: center;
-         -ms-flex-align: center;
-         align-items: center;
-         }
-         .qr-code-container {
-         -webkit-transform: translateX(-80%);
-         -ms-transform: translateX(-80%);
-         transform: translateX(-80%);
-         -webkit-transition: -webkit-transform 1s ease-out;
-         transition: -webkit-transform 1s ease-out;
-         -o-transition: transform 1s ease-out;
-         transition: transform 1s ease-out;
-         transition: transform 1s ease-out, -webkit-transform 1s ease-out;
-         }
-         .open {
-         -webkit-transform: translateX(0%);
-         -ms-transform: translateX(0%);
-         transform: translateX(0%);
-         }
-         .closeAnim {
-         -webkit-transition: -webkit-transform 0.5s ease-out;
-         transition: -webkit-transform 0.5s ease-out;
-         -o-transition: transform 0.5s ease-out;
-         transition: transform 0.5s ease-out;
-         transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
-         -webkit-transform: rotateZ(180deg);
-         -ms-transform: rotate(180deg);
-         transform: rotateZ(180deg);
-         }
-         .lottie-anim {
-         position: absolute;
-         bottom: 1.5%;
-         }
-         .arrow {
-        opacity: 0;
-        position: absolute;
-        right: 5%;
-        bottom: 3%;
-        transform-origin: 50% 50%;
-
-        transform: translate3d(-50%, -50%, 0);
-        transform: rotate(90deg);
-      }
-
-      .arrow-first {
-        animation: arrow-movement 2s ease-in-out infinite;
-      }
-      .arrow-second {
-        animation: arrow-movement 2s 1s ease-in-out infinite;
-      }
-
-      .arrow:before,
-      .arrow:after {
-        background: black;
-        content: "";
-        display: block;
-        height: 0.4vw;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 4vw
-      }
-
-      .arrow:before {
-        transform: rotate(45deg) translateX(-20%);
-        transform-origin: top left;
-      }
-
-      .arrow:after {
-        transform: rotate(-45deg) translateX(20%);
-        transform-origin: top right;
-      }
-
-      @keyframes arrow-movement {
-        0% {
-          opacity: 0;
-        }
-        70% {
-          opacity: 1;
-        }
-        100% {
-          opacity: 0;
-          right: 9%;
-        }
-      }
+const GlobalStyle = createGlobalStyle`
+* {
+    margin: 0;
+    padding: 0;
+  
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: "Bellefair", serif;
+    font-family: "Cormorant", serif;
+    font-family: "Montserrat", sans-serif;
+    font-family: "Roboto", sans-serif;
+    }
+    html,body
+    {
+      width: 100%;
+      height: 100%;
+        position: fixed;
 
       
-      
+    }
+    
+    a,
+    a:hover,
+    a:focus,
+    a:active {
+    text-decoration: none;
+    color: inherit;
+    }
+    img {
+    width: 100%;
+    height: 100%;
+    }
+    
+    /*Loader*/
+    .loader-div {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: white;
+    text-align: center;
+    z-index: 999;
+    }
+    .loader-div h1 {
+    margin: 0;
+    padding: 0;
+    font-weight: 300;
+    font-size: 4vw;
+    color: #e4b464;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+    .loader-div h1 span {
+    position: relative;
+    top: 0.63em;
+    display: inline-block;
+    text-transform: uppercase;
+    opacity: 0;
+    -webkit-transform: rotateX(-90deg);
+    transform: rotateX(-90deg);
+    }
+    .loader-div h1 .let1 {
+    -webkit-animation: drop 1.2s ease-in-out infinite;
+    animation: drop 1.2s ease-in-out infinite;
+    -webkit-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+    }
+    .loader-div h1 .let2 {
+    -webkit-animation: drop 1.2s ease-in-out infinite;
+    animation: drop 1.2s ease-in-out infinite;
+    -webkit-animation-delay: 1.3s;
+    animation-delay: 1.3s;
+    }
+    .loader-div h1 .let3 {
+    -webkit-animation: drop 1.2s ease-in-out infinite;
+    animation: drop 1.2s ease-in-out infinite;
+    -webkit-animation-delay: 1.4s;
+    animation-delay: 1.4s;
+    }
+    .loader-div h1 .let4 {
+    -webkit-animation: drop 1.2s ease-in-out infinite;
+    animation: drop 1.2s ease-in-out infinite;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+    }
+    .loader-div h1 .let5 {
+    -webkit-animation: drop 1.2s ease-in-out infinite;
+    animation: drop 1.2s ease-in-out infinite;
+    -webkit-animation-delay: 1.6s;
+    animation-delay: 1.6s;
+    }
+    .loader-div h1 .let6 {
+    -webkit-animation: drop 1.2s ease-in-out infinite;
+    animation: drop 1.2s ease-in-out infinite;
+    -webkit-animation-delay: 1.7s;
+    animation-delay: 1.7s;
+    }
+    .loader-div h1 .let7 {
+    -webkit-animation: drop 1.2s ease-in-out infinite;
+    animation: drop 1.2s ease-in-out infinite;
+    -webkit-animation-delay: 1.8s;
+    animation-delay: 1.8s;
+    }
+    @-webkit-keyframes drop {
+    10% {
+    opacity: 0.5;
+    }
+    20% {
+    opacity: 1;
+    top: 3.78em;
+    -webkit-transform: rotateX(-360deg);
+    transform: rotateX(-360deg);
+    }
+    80% {
+    opacity: 1;
+    top: 3.78em;
+    -webkit-transform: rotateX(-360deg);
+    transform: rotateX(-360deg);
+    }
+    90% {
+    opacity: 0.5;
+    }
+    100% {
+    opacity: 0;
+    top: 6.94em;
+    }
+    }
+    @keyframes drop {
+    10% {
+    opacity: 0.5;
+    }
+    20% {
+    opacity: 1;
+    top: 3.78em;
+    -webkit-transform: rotateX(-360deg);
+    transform: rotateX(-360deg);
+    }
+    80% {
+    opacity: 1;
+    top: 3.78em;
+    -webkit-transform: rotateX(-360deg);
+    transform: rotateX(-360deg);
+    }
+    90% {
+    opacity: 0.5;
+    }
+    100% {
+    opacity: 0;
+    top: 6.94em;
+    }
+    }
+    /*end loader*/
+    .swiper-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    margin-left: -50%;
+    color: white;
+    }
+    
+   
+    .swiper-slide {
+    background: #fff;
+    width: 100% !important;
+    height: 100% !important;
+    }
+    
+    .one {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    color: black;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    
+    }
 
-      </style>
-   </head>
-   <body onload="sizes()">
-      <div class="loader-div">
-         <h1>
-            <span class="let1">l</span>
-            <span class="let2">o</span>
-            <span class="let3">a</span>
-            <span class="let4">d</span>
-            <span class="let5">i</span>
-            <span class="let6">n</span>
-            <span class="let7">g</span>
-         </h1>
+    .one,.second,.third,.fourth,.fifth
+    {
+      width: 100%;
+      height: 100%;
+     
+     
+    }
+    .one-wrapper
+    {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .tc1{
+    -webkit-transform:translateX(50%);
+    -ms-transform:translateX(50%);
+    transform:translateX(50%);
+    -webkit-transition: 1s all ease-out;
+    -o-transition: 1s all ease-out;
+    transition: 1s all ease-out;
+     }
+
+    .tc2{
+    -webkit-transform:translateX(50%);
+    -ms-transform:translateX(50%);
+    transform:translateX(50%);
+    -webkit-transition: 0.8s all ease-out;
+    -o-transition: 0.8s all ease-out;
+    transition: 0.8s all ease-out;
+     }
+
+    .tc3
+    {
+    -webkit-transform:translateX(50%);
+    -ms-transform:translateX(50%);
+    transform:translateX(50%);
+    -webkit-transition: 0.6s all ease-out;
+    -o-transition: 0.6s all ease-out;
+    transition: 0.6s all ease-out;
+
+    } 
+
+
+    .transl{
+    -webkit-transform:translateX(0%);
+    -ms-transform:translateX(0%);
+    transform:translateX(0%);
+    }
+    #logo {
+    }
+    #name {
+    font-family: "Cormorant", serif;
+    font-style: normal;
+    font-weight: 600;
+    /* or 75% */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    }
+    #tag {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #181e2a;
+    width: 50%;
+    text-align: center;
+    }
+    #divider {
+    background: url("gold-textured-background.png") no-repeat;
+    }
+    .contact-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    }
+    .phone-icon {
+    height: auto;
+    }
+    .icon-tag {
+    font-family: "Montserrat", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    }
+    #primary-btn {
+    height: auto;
+    }
+    #social-wrapper {
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    }
+    #sharebtn {
+    position: absolute;
+    top: 2.5%;
+    right: 4%;
+    }
+    #leftarrow {
+    position: absolute;
+    bottom: 3%;
+    right: 8%;
+    }
+    .second {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    }
+    .second-image {
+    width: 95%;
+    height: 95%;
+    overflow: hidden;
+    }
+    #white-bar
+    {
+    position: absolute;
+    width: 95%;
+    background: white;
+    top: 65%;
+    }
+    #quote
+    {
+    
+    font-family: Bellefair;
+    font-style: normal;
+    font-weight: normal;
+    -webkit-transform-origin: top left;
+    -ms-transform-origin: top left;
+    transform-origin: top left;
+    
+    text-align: center;
+    transform: translate3d(0px, 0px, 0px) rotate(270deg) !important;
+    }
+    .white
+    {
+    position: absolute;
+    height: auto;
+    bottom: 5%;
+    }
+    .white-btn
+    {
+    position: absolute;
+    height: auto;
+    bottom: 18%;
+    }
+    .white-circle
+    {
+    position: absolute;
+    height: auto;
+    bottom: 28%;
+    }
+    .rect
+    {
+    position: absolute;
+    height: 6%;
+    left:6%;
+    bottom: 18%;
+    }
+    .rect-right
+    {
+    position: absolute;
+    height: 6%;
+    right:6%;
+    bottom: 18%;
+    }
+    #leftarrow2 {
+    position: absolute;
+    bottom: 3.5%;
+    left: 5%;
+    }
+    #leftarrow2-top{
+    position: absolute;
+    top: 3.5%;
+    right: 5%;
+    }
+    .third,.fourth
+    {
+    width: 100%;
+    height: 100%;
+    background: url('third-img.png')no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    }
+    .fourth
+    {
+    background: #E7F9FD;
+    }
+    .third-container,.fourth-container
+    {
+    width: 95%;
+    height: 95%;
+    }
+    #third-img-1,#fourth-img-1
+    {
+    width: 100%;
+    height: 42%;
+    overflow: hidden;
+    }
+    #third-img-2,#fourth-img-2
+    {
+    width: 100%;
+    height: 42%;
+    overflow: hidden;
+    }
+    #third-contx,#fourth-contx
+    {
+    width: 100%;
+    height: 16%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    }
+    #third-txt,#fourth-txt
+    {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 125%;
+    /* or 125% */
+    text-transform: uppercase;
+    color: #8C533B;
+    width: 35%;
+    }
+    #fourth-txt
+    {
+    width: 70%;
+    }
+    #leftarrow3
+    {
+    position: absolute;
+    top: 4%;
+    right: 5%;
+    }
+    #leftarrow3-top
+    {
+    position: absolute;
+    bottom: 3.5%;
+    left: 5%;
+    }
+    #leftarrow4
+    {
+    position: absolute;
+    top: 3.5%;
+    left: 5%;
+    }
+    #leftarrow4-top
+    {
+    position: absolute;
+    bottom: 3.5%;
+    right: 5%;
+    }
+    #longline
+    {
+    position: absolute;
+    width: 0.4%;
+    height: 35%;
+    top: 10%;
+    right: 6%;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    }
+    #longline-down
+    {
+    position: absolute;
+    width: 0.4%;
+    height: 35%;
+    bottom: 10%;
+    left: 6%;
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    }
+    .white-circle2    
+    {
+    position: absolute;
+    height: auto;
+    top: 6%;
+    right: 5%;
+    }
+    .white-circle3  
+    {
+    position: absolute;
+    ;
+    height: auto;
+    bottom: 6%;
+    left: 5%;
+    }
+    .fifth
+    {
+    background: #F3EDE2;
+    width: 100%;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    }
+    #fifth-img-1
+    {
+    overflow: hidden;
+    border-radius: 50%;
+    position: absolute;
+    top: 2%;
+    }
+    #fifth-img-2
+    {
+    overflow: hidden;
+    border-top-left-radius:50%;
+    border-top-right-radius:50%;
+    position: absolute;
+    bottom: 0;
+    }
+    .white-circle-fifth
+    {
+    position: absolute;
+    height: auto;
+  
+    top:42%;
+    }
+    .white-btn-fifth
+    {
+    position: absolute;
+    height: auto;
+    top:33%;
+   
+    }
+    #leftarrow5
+    {
+    position: absolute;
+    top: 3.5%;
+    left: 5%;
+    }
+    #leftarrow5-top
+    {
+    position: absolute;
+    top: 3.5%;
+    right: 5%;
+    }
+    .second-img,.third-img-01,.third-img-02,.fourth-img-01,.fourth-img-02,.fifth-img-01,.fifth-img-02
+    {
+    z-index: -1;
+    -webkit-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition: 5s -webkit-transform ease-out;
+    transition: 5s -webkit-transform ease-out;
+    -o-transition: 5s transform ease-out;
+    transition: 5s transform ease-out;
+    transition: 5s transform ease-out, 5s -webkit-transform ease-out;
+    }
+    .zoomOut
+    {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    }
+    .transitionfix {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    
+    }
+    /*share slide*/
+    .share-slide {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: -o-linear-gradient(top, #dcb06b 0%, #be9160 100%);
+    background: -webkit-gradient(linear, left top, left bottom, from(#dcb06b), to(#be9160));
+    background: linear-gradient(180deg, #dcb06b 0%, #be9160 100%);
+    /* mix-blend-mode: normal;
+    backdrop-filter: blur(30px);*/
+    z-index: 222;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 1s ease-out;
+    transition: -webkit-transform 1s ease-out;
+    -o-transition: transform 1s ease-out;
+    transition: transform 1s ease-out;
+    transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+    }
+    .share-slide .close-icon {
+    position: absolute;
+    top: 4%;
+    right: 7%;
+    }
+    .share-slide-share-icons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
+    .share-headline {
+    color: #ffffff;
+    -webkit-transform: translateX(-80%);
+    -ms-transform: translateX(-80%);
+    transform: translateX(-80%);
+    -webkit-transition: -webkit-transform 1s ease-out;
+    transition: -webkit-transform 1s ease-out;
+    -o-transition: transform 1s ease-out;
+    transition: transform 1s ease-out;
+    transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+    }
+    .scan-and-save-txt {
+    color: #ffffff;
+    margin-top: 30%;
+    -webkit-transform: translateX(-80%);
+    -ms-transform: translateX(-80%);
+    transform: translateX(-80%);
+    -webkit-transition: -webkit-transform 1s ease-out;
+    transition: -webkit-transform 1s ease-out;
+    -o-transition: transform 1s ease-out;
+    transition: transform 1s ease-out;
+    transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+    }
+    .icon-grid {
+    display: -ms-grid;
+    display: grid;
+    width: 100%;
+    -ms-grid-columns: 11vw 11vw 11vw 11vw;
+    grid-template-columns: 11vw 11vw 11vw 11vw;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-transform: translateX(-40%);
+    -ms-transform: translateX(-40%);
+    transform: translateX(-40%);
+    -webkit-transition: -webkit-transform 1s ease-out;
+    transition: -webkit-transform 1s ease-out;
+    -o-transition: transform 1s ease-out;
+    transition: transform 1s ease-out;
+    transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+    }
+    .icon-grid a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    }
+    .qr-code-wrapper {
+    width: 100%;
+    height: 50vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    color: #ffffff;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    }
+    .qr-code-container {
+    -webkit-transform: translateX(-80%);
+    -ms-transform: translateX(-80%);
+    transform: translateX(-80%);
+    -webkit-transition: -webkit-transform 1s ease-out;
+    transition: -webkit-transform 1s ease-out;
+    -o-transition: transform 1s ease-out;
+    transition: transform 1s ease-out;
+    transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+    }
+    .open {
+    -webkit-transform: translateX(0%);
+    -ms-transform: translateX(0%);
+    transform: translateX(0%);
+    }
+    .closeAnim {
+    -webkit-transition: -webkit-transform 0.5s ease-out;
+    transition: -webkit-transform 0.5s ease-out;
+    -o-transition: transform 0.5s ease-out;
+    transition: transform 0.5s ease-out;
+    transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
+    -webkit-transform: rotateZ(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotateZ(180deg);
+    }
+    .lottie-anim {
+    position: absolute;
+    bottom: 1.5%;
+    }
+    .arrow {
+   opacity: 0;
+   position: absolute;
+   right: 5%;
+   bottom: 3%;
+   transform-origin: 50% 50%;
+
+   transform: translate3d(-50%, -50%, 0);
+   transform: rotate(90deg);
+ }
+
+ .arrow-first {
+   animation: arrow-movement 2s ease-in-out infinite;
+ }
+ .arrow-second {
+   animation: arrow-movement 2s 1s ease-in-out infinite;
+ }
+
+ .arrow:before,
+ .arrow:after {
+   background: black;
+   content: "";
+   display: block;
+   height: 0.4vw;
+   position: absolute;
+   top: 0;
+   right: 0;
+   width: 4vw
+ }
+
+ .arrow:before {
+   transform: rotate(45deg) translateX(-20%);
+   transform-origin: top left;
+ }
+
+ .arrow:after {
+   transform: rotate(-45deg) translateX(20%);
+   transform-origin: top right;
+ }
+
+ @keyframes arrow-movement {
+   0% {
+     opacity: 0;
+   }
+   70% {
+     opacity: 1;
+   }
+   100% {
+     opacity: 0;
+     right: 9%;
+   }
+ }
+
+
+`;
+
+const Nino = () => {
+  var swiper = new Swiper(".swiper-container", {
+    effect: "cube",
+    observer: true,
+    observeParents: true,
+    grabCursor: true,
+    cubeEffect: {
+      shadow: false,
+      slideShadows: true,
+      shadowOffset: 20,
+      shadowScale: 0.94,
+    },
+    speed: 800,
+    parallax: true,
+    navigation: {
+      nextEl: ".next",
+      prevEl: ".prev",
+    },
+  });
+
+  setTimeout(function () {
+    $(".loader-div").fadeOut();
+    $(".tc1").addClass("transl");
+    $(".tc2").addClass("transl");
+    $(".tc3").addClass("transl");
+  }, 2000);
+
+  setInterval(function () {
+    if (swiper.activeIndex === 0) {
+      $(".second-img").removeClass("zoomOut");
+    }
+    if (swiper.activeIndex === 1) {
+      $(".second-img").addClass("zoomOut");
+      $(".third-img-01").removeClass("zoomOut");
+      $(".third-img-02").removeClass("zoomOut");
+      $(".fifth").css("opacity", "0");
+    }
+    if (swiper.activeIndex === 2) {
+      $(".third-img-01").addClass("zoomOut");
+      $(".third-img-02").addClass("zoomOut");
+      $(".second-img").removeClass("zoomOut");
+      $(".fourth-img-01").removeClass("zoomOut");
+      $(".fourth-img-02").removeClass("zoomOut");
+      $(".fifth").css("opacity", "0");
+    }
+    if (swiper.activeIndex === 3) {
+      $(".fourth-img-01").addClass("zoomOut");
+      $(".fourth-img-02").addClass("zoomOut");
+      $(".third-img-01").removeClass("zoomOut");
+      $(".third-img-02").removeClass("zoomOut");
+      $(".fifth-img-01").removeClass("zoomOut");
+      $(".fifth-img-02").removeClass("zoomOut");
+      $(".fifth").css("opacity", "1");
+    }
+    if (swiper.activeIndex === 4) {
+      $(".fifth-img-01").addClass("zoomOut");
+      $(".fifth-img-02").addClass("zoomOut");
+      $(".fourth-img-01").removeClass("zoomOut");
+      $(".fourth-img-02").removeClass("zoomOut");
+    }
+  }, 100);
+
+  function openSlide() {
+    $(".share-slide").addClass("open");
+    $(".icon-grid").addClass("open").delay(500);
+    $(".share-headline").addClass("open").delay(500);
+    $(".scan-and-save-txt").addClass("open").delay(500);
+    $(".qr-code-container").addClass("open").delay(500);
+    $(".close-icon").removeClass("closeAnim");
+  }
+
+  function closeSlide() {
+    $(".share-slide").removeClass("open");
+    $(".icon-grid").removeClass("open").delay(500);
+    $(".share-headline").removeClass("open").delay(500);
+    $(".scan-and-save-txt").removeClass("open").delay(500);
+    $(".qr-code-container").removeClass("open").delay(500);
+    $(".close-icon").addClass("closeAnim").delay(1000);
+  }
+
+  function play2() {
+    var audioElement = document.getElementById("audio");
+
+    if (audioElement.paused) {
+      /* Audio link for notification */
+      audioElement.play();
+    } else {
+      audioElement.pause();
+    }
+  }
+
+  return (
+    <div>
+      <GlobalStyle />
+      <div className="loader-div">
+        <h1>
+          <span className="let1">l</span>
+          <span className="let2">o</span>
+          <span className="let3">a</span>
+          <span className="let4">d</span>
+          <span className="let5">i</span>
+          <span className="let6">n</span>
+          <span className="let7">g</span>
+        </h1>
       </div>
-      <div class="share-slide" id="share-slide" style="border: none">
-         <img
-            src="https://m.artcoolcards.com/parisis/media/closeicon.png"
-            alt="close-icon"
-            class="close-icon"
-            onclick="closeSlide()"
-            id="close-icon-share"
+      <div className="share-slide" id="share-slide">
+        <img
+          src="https://m.artcoolcards.com/parisis/media/closeicon.png"
+          alt="close-icon"
+          className="close-icon"
+          onclick="closeSlide()"
+          id="close-icon-share"
+        />
+        <div className="share-slide-share-icons">
+          <h2 className="share-headline" id="share-headline">
+            SHARE MY CARD
+          </h2>
+          <div className="icon-grid" id="icon-grid">
+            <a href="sms:?&body=/* You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo */">
+              <img
+                src="https://m.artcoolcards.com/parisis/media/sms.png"
+                alt="sms-img"
+                id="share-img1"
+              />
+            </a>
+            <a href="viber://forward?text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo">
+              <img
+                src="https://m.artcoolcards.com/parisis/media/cs.png"
+                alt="cs-img"
+                id="share-img2"
+              />
+            </a>
+            <a href="whatsapp://send?text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo">
+              <img
+                src="https://m.artcoolcards.com/parisis/media/whatsapp.png"
+                alt="whatsapp-img"
+                id="share-img3"
+              />
+            </a>
+            <a href="mailto:?subject=My Digital Business Card&amp;body=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo">
+              <img
+                src="https://m.artcoolcards.com/parisis/media/dropbox 187.png"
+                alt="dropbox-img"
+                id="share-img4"
+              />
+            </a>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.facebook.com/sharer.php?href=https://artcoolcards.com/card/nino-sanfilippo&display=popup"
+            >
+              <img
+                src="https://m.artcoolcards.com/parisis/media/fb9.png"
+                alt="fb-img"
+                id="share-img5"
+              />
+            </a>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://t.me/share/url?url=https://artcoolcards.com/card/parisis&text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo"
+            >
+              <img
+                src="https://m.artcoolcards.com/parisis/media/telegram 191.png"
+                alt="tel-img"
+                id="share-img6"
+              />
+            </a>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="http://twitter.com/share?text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/parisis&url=https://artcoolcards.com/card/nino-sanfilippo"
+            >
+              <img
+                src="https://m.artcoolcards.com/parisis/media/twitter8.png"
+                alt="twit-img"
+                id="share-img7"
+              />
+            </a>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href="https://www.linkedin.com/sharing/share-offsite/?url=https://artcoolcards.com/card/nino-sanfilippo"
+            >
+              <img
+                src="https://m.artcoolcards.com/parisis/media/linkedin3.png"
+                alt="linkedin-img"
+                id="share-img8"
+              />
+            </a>
+          </div>
+          <h2 className="scan-and-save-txt" id="scan-save-txt">
+            SCAN AND SAVE
+          </h2>
+          <div className="qr-code-container">
+            <img
+              src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/qr-code.png"
+              alt="qr-img"
+              id="qr-img"
             />
-         <div class="share-slide-share-icons">
-            <h2 class="share-headline" id="share-headline">SHARE MY CARD</h2>
-            <div class="icon-grid" id="icon-grid">
-               <a
-                  href="sms:?&body=/* You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo */"
-                  ><img
-                  src="https://m.artcoolcards.com/parisis/media/sms.png"
-                  alt="sms-img"
-                  id="share-img1"
-                  /></a>
-               <a
-                  href="viber://forward?text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo"
-                  ><img
-                  src="https://m.artcoolcards.com/parisis/media/cs.png"
-                  alt="cs-img"
-                  id="share-img2"
-                  /></a>
-               <a
-                  href="whatsapp://send?text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo"
-                  ><img
-                  src="https://m.artcoolcards.com/parisis/media/whatsapp.png"
-                  alt="whatsapp-img"
-                  id="share-img3"
-                  /></a>
-               <a
-                  href="mailto:?subject=My Digital Business Card&amp;body=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo"
-                  ><img
-                  src="https://m.artcoolcards.com/parisis/media/dropbox 187.png"
-                  alt="dropbox-img"
-                  id="share-img4"
-                  /></a>
-               <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://www.facebook.com/sharer.php?href=https://artcoolcards.com/card/nino-sanfilippo&display=popup"
-                  ><img
-                  src="https://m.artcoolcards.com/parisis/media/fb9.png"
-                  alt="fb-img"
-                  id="share-img5"
-                  /></a>
-               <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://t.me/share/url?url=https://artcoolcards.com/card/parisis&text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo"
-                  ><img
-                  src="https://m.artcoolcards.com/parisis/media/telegram 191.png"
-                  alt="tel-img"
-                  id="share-img6"
-                  /></a>
-               <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="http://twitter.com/share?text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/parisis&url=https://artcoolcards.com/card/nino-sanfilippo"
-                  ><img
-                  src="https://m.artcoolcards.com/parisis/media/twitter8.png"
-                  alt="twit-img"
-                  id="share-img7"
-                  /></a>
-               <a
-                  rel="noopener noreferrer"
-                  target="_blank"
-                  href="https://www.linkedin.com/sharing/share-offsite/?url=https://artcoolcards.com/card/nino-sanfilippo"
-                  ><img
-                  src="https://m.artcoolcards.com/parisis/media/linkedin3.png"
-                  alt="linkedin-img"
-                  id="share-img8"
-                  /></a>
-            </div>
-            <h2 class="scan-and-save-txt" id="scan-save-txt">SCAN AND SAVE</h2>
-            <div class="qr-code-container">
-               <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/qr-code.png"
-                  alt="qr-img"
-                  id="qr-img"
-                  />
-            </div>
-
-         </div>
+          </div>
+        </div>
       </div>
-      <!-- Swiper -->
-      <div class="swiper-container" id="sc">
-      <div class="swiper-wrapper">
-         <div class="swiper-slide" id="f1">
-            <div class="one-wrapper" data-swiper-parallax="-200">
-               <div class="one" id="one"  >
-                  <div class="arrow arrow-first next tc1" ></div>
-                  <div class="arrow arrow-second next tc1"></div>
-                  <audio id="audio">
-                     <source
-                        src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/WhatsApp Audio 2021-08-09 at 1.38.11 PM.mpeg"
-                        type="audio/mpeg"
-                        />
-                  </audio>
-                  <div id="social-wrapper" class="tc2">
-                     <a href="https://www.facebook.com/LoungeBeachScaladeiTurchi/" target="_blank" id="social1"><img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fb.png" alt="social" id="social1-img"
-                        /></a>
-                     <a href="https://www.instagram.com/lounge_beach_scala_dei_turchi/?utm_medium=copy_link" target="_blank" id="social2"><img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/insta.png" alt="social" id="social2-img"
-                        /></a>
-                  </div>
-                 <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/share-btn.png" id="sharebtn" alt="social" class="tc2" onclick="openSlide()"/>
-                  <lottie-player
-                     src="https://raw.githubusercontent.com/rohit-virkud/template02-light/main/hj.json"
-                     background="transparent"
-                     speed="1"
-                     class="lottie-anim tc1"
-                     id="lottie"
-                     onclick="play2()"
-                     loop
-                     autoplay
-                     style="
+
+      <div className="swiper-container" id="sc">
+        <div className="swiper-wrapper">
+          <div className="swiper-slide" id="f1">
+            <div className="one-wrapper" data-swiper-parallax="-200">
+              <div className="one" id="one">
+                <div className="arrow arrow-first next tc1"></div>
+                <div className="arrow arrow-second next tc1"></div>
+                <audio id="audio">
+                  <source
+                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/WhatsApp Audio 2021-08-09 at 1.38.11 PM.mpeg"
+                    type="audio/mpeg"
+                  />
+                </audio>
+                <div id="social-wrapper" className="tc2">
+                  <a
+                    href="https://www.facebook.com/LoungeBeachScaladeiTurchi/"
+                    target="_blank"
+                    id="social1"
+                  >
+                    <img
+                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fb.png"
+                      alt="social"
+                      id="social1-img"
+                    />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/lounge_beach_scala_dei_turchi/?utm_medium=copy_link"
+                    target="_blank"
+                    id="social2"
+                  >
+                    <img
+                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/insta.png"
+                      alt="social"
+                      id="social2-img"
+                    />
+                  </a>
+                </div>
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/share-btn.png"
+                  id="sharebtn"
+                  alt="social"
+                  className="tc2"
+                  onclick="openSlide()"
+                />
+                <lottie-player
+                  src="https://raw.githubusercontent.com/rohit-virkud/template02-light/main/hj.json"
+                  background="transparent"
+                  speed="1"
+                  className="lottie-anim tc1"
+                  id="lottie"
+                  onclick="play2()"
+                  loop
+                  autoplay
+                  style="
                      cursor: pointer;
                      z-index: 999;
                      stroke: black;
                      bottom: 2%;
                      left: 5%;
                      "
-                     ></lottie-player>
-                 
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/logo.png" id="logo" alt="logo" class="tc3"/>
-                  <h1 id="name" class="tc3">NINO SANFILIPPO</h1>
-                  <p id="tag" class="tc3">Owner</p>
-                  <div id="divider" class="tc3"></div>
-                  <div class="contact-wrapper tc3" id="contact-wrapper" >
-                     <a href="tel:+39 393 9618010" class="contact-container" id="contact-container1">
-                        <img
-                           src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/phone-icon.png"
-                           alt="icon"
-                           class="phone-icon"
-                           id="icon1"
-                           />
-                        <p class="icon-tag" id="icon-tag-1">+39 393 9618010</p>
-                     </a>
-                     <a href="tel:+39 3313597864" class="contact-container" id="contact-container2">
-                        <img
-                           src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/home-icon.png"
-                           alt="icon"
-                           class="phone-icon"
-                           id="icon2"
-                           />
-                        <p class="icon-tag" id="icon-tag-2">+39 3313597864</p>
-                     </a>
-                     <a href="mailto:info@lbscaladeiturchi.com" class="contact-container" id="contact-container3">
-                        <img
-                           src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/msg-icon.png"
-                           alt="icon"
-                           class="phone-icon"
-                           id="icon3"
-                           />
-                        <p class="icon-tag" id="icon-tag-3">info@lbscaladeiturchi.com</p>
-                     </a>
-                     <a href="https://maps.google.com/?q=Stada provinciale 68 92010 Realmonte (AG)" class="contact-container" target="_blank" id="contact-container4">
-                        <img
-                           src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/location-icon.png"
-                           alt="icon"
-                           class="phone-icon"
-                           id="icon4"
-                           />
-                        <p class="icon-tag" id="icon-tag-4">
-                           Stada provinciale 68 92010 Realmonte (AG)
-                        </p>
-                     </a>
-                     <a href="https://www.lbscaladeiturchi.com/" target="_blank"  class="contact-container" id="contact-container5">
-                        <img
-                           src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/web-icon.png"
-                           alt="icon"
-                           class="phone-icon"
-                           id="icon5"
-                           />
-                        <p class="icon-tag" id="icon-tag-5">www.lbscaladeiturchi.com</p>
-                     </a>
-                  </div>
-                  <a href="#!" class="tc2">
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/btn.png" alt="icon" id="primary-btn" />
-                  </a>
-               </div>
-            </div>
-         </div>
-         <div class="swiper-slide" id="f2" style="position: relative;" >
-            <div class="second" id="second" style="width: 100%;height: 100%" data-swiper-parallax="-100">
-               <div class="second-image transitionfix " id="second-img" >
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/second.png" alt="img"  class="second-img" />
-               </div>
-               
-               <div id="white-bar"></div>
-              
-               <div data-swiper-parallax="-100" style="position: absolute;left: 6%;
-               width: 85%;bottom: 38%;">
-               <p id="quote"  >the Lounge Beach Scala dei Turchi is a location that perfectly integrates with the surrounding paradise, the sea, the sun and the famous seaside resort of Agrigento.</p>
-               </div>
-               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png" alt="logo-img" class="white-circle"  id="white-circle" data-swiper-parallax="-100" />
-               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/second-btn.png" alt="logo-img" class="white-btn" id="white-btn" data-swiper-parallax="-200"/>
-               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-logo.png" alt="logo-img" class="white" id="white" data-swiper-parallax="-100"/>
-               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-left.png" alt="logo-img" class="rect" id="rect-left" data-swiper-parallax="-100"/>
-               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-right.png" alt="logo-img" class="rect-right" id="rect-right" data-swiper-parallax="-100"/>
-               <div id="leftarrow2" class="next-two prev">
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png" alt="leftarrow" id="leftarrowimg2" />
-               </div>
-               <div id="leftarrow2-top" class="next-two next">
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png" alt="leftarrow" id="leftarrowimg2-top" />
-               </div>
-            </div>
-         </div>
-         <div class="swiper-slide" id="f3">
-            <div class="third" id="third">
-               <div class="third-container">
-                  <div id="third-img-1" class="transitionfix" data-swiper-parallax="-200">
-                     <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/third-img-01.png" alt="img1"  class="third-img-01" />
-                  </div>
-                  <div id="third-contx" data-swiper-parallax="-300">
-                     <h1 id="third-txt">From the sea to the table</h1>
-                  </div>
-                  <div id="third-img-2" class="transitionfix" data-swiper-parallax="-200"> 
-                     <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/third-img-02.png" alt="img1" class="third-img-02" />
-                  </div>
-               </div>
-               <div id="leftarrow3" class="next-two next">
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png" alt="leftarrow" id="leftarrowimg3" />
-               </div>
-               <div id="leftarrow3-top" class="next-two prev">
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png" alt="leftarrow" id="leftarrowimg3-top" />
-               </div>
-            </div>
-         </div>
-         <div class="swiper-slide" id="f4">
-            <div class="fourth" id="fourth">
-               <div class="fourth-container">
-                  <div id="fourth-img-1" class="transitionfix" data-swiper-parallax="-200">
-                     <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fourth-img-01.png" alt="img1"  class="fourth-img-01" />
-                  </div>
-                  <div id="fourth-contx" data-swiper-parallax="-300">
-                     <h1 id="fourth-txt">Carefully sourced and selected champagnes, wines AND tailored drinks</h1>
-                  </div>
-                  <div id="fourth-img-2" class="transitionfix" data-swiper-parallax="-200"> 
-                     <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fourth-img-02.png" alt="img2"  class="fourth-img-02"/>
-                  </div>
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png" alt="logo-img" class="white-circle2" id="white-circle2"/>
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/longline.png" alt="longline" id="longline"  />
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/longline.png" alt="longline" id="longline-down" />
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png" alt="logo-img" class="white-circle3" id="white-circle3"/>
-               </div>
-               <div id="leftarrow4" class="next-two prev">
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png" alt="leftarrow" id="leftarrowimg4" />
-               </div>
-               <div id="leftarrow4-top" class="next-two next">
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png" alt="leftarrow" id="leftarrowimg4-top" />
-               </div>
-            </div>
-         </div>
-         <div class="swiper-slide" id="f5">
-            <div class="fifth" id="fifth">
-               
-               <div id="fifth-img-1" class="transitionfix" data-swiper-parallax="-200"> 
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-round.png" alt="img2" class="fifth-img-01" />
-               </div>
-               <div id="fifth-img-2" class="transitionfix" data-swiper-parallax="-400"> 
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-second.png" alt="img2" class="fifth-img-02"/>
-               </div>
+                ></lottie-player>
 
-               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png" alt="logo-img" class="white-circle-fifth" id="white-circle-fifth" data-swiper-parallax="-250"/>
-               <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-btn.png" alt="logo-img" class="white-btn-fifth"  id="white-btn-fifth" data-swiper-parallax="-250"/>
-               <div id="leftarrow5" class="next-two prev">
-                  <img src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png" alt="leftarrow" id="leftarrowimg5" />
-               </div>
-              
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/logo.png"
+                  id="logo"
+                  alt="logo"
+                  className="tc3"
+                />
+                <h1 id="name" className="tc3">
+                  NINO SANFILIPPO
+                </h1>
+                <p id="tag" className="tc3">
+                  Owner
+                </p>
+                <div id="divider" className="tc3"></div>
+                <div className="contact-wrapper tc3" id="contact-wrapper">
+                  <a
+                    href="tel:+39 393 9618010"
+                    className="contact-container"
+                    id="contact-container1"
+                  >
+                    <img
+                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/phone-icon.png"
+                      alt="icon"
+                      className="phone-icon"
+                      id="icon1"
+                    />
+                    <p className="icon-tag" id="icon-tag-1">
+                      +39 393 9618010
+                    </p>
+                  </a>
+                  <a
+                    href="tel:+39 3313597864"
+                    className="contact-container"
+                    id="contact-container2"
+                  >
+                    <img
+                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/home-icon.png"
+                      alt="icon"
+                      className="phone-icon"
+                      id="icon2"
+                    />
+                    <p className="icon-tag" id="icon-tag-2">
+                      +39 3313597864
+                    </p>
+                  </a>
+                  <a
+                    href="mailto:info@lbscaladeiturchi.com"
+                    className="contact-container"
+                    id="contact-container3"
+                  >
+                    <img
+                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/msg-icon.png"
+                      alt="icon"
+                      className="phone-icon"
+                      id="icon3"
+                    />
+                    <p className="icon-tag" id="icon-tag-3">
+                      info@lbscaladeiturchi.com
+                    </p>
+                  </a>
+                  <a
+                    href="https://maps.google.com/?q=Stada provinciale 68 92010 Realmonte (AG)"
+                    className="contact-container"
+                    target="_blank"
+                    id="contact-container4"
+                  >
+                    <img
+                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/location-icon.png"
+                      alt="icon"
+                      className="phone-icon"
+                      id="icon4"
+                    />
+                    <p className="icon-tag" id="icon-tag-4">
+                      Stada provinciale 68 92010 Realmonte (AG)
+                    </p>
+                  </a>
+                  <a
+                    href="https://www.lbscaladeiturchi.com/"
+                    target="_blank"
+                    className="contact-container"
+                    id="contact-container5"
+                  >
+                    <img
+                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/web-icon.png"
+                      alt="icon"
+                      className="phone-icon"
+                      id="icon5"
+                    />
+                    <p className="icon-tag" id="icon-tag-5">
+                      www.lbscaladeiturchi.com
+                    </p>
+                  </a>
+                </div>
+                <a href="#!" className="tc2">
+                  <img
+                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/btn.png"
+                    alt="icon"
+                    id="primary-btn"
+                  />
+                </a>
+              </div>
             </div>
-         </div>
+          </div>
+          <div className="swiper-slide" id="f2">
+            <div
+              className="second"
+              id="second"
+              style={{ width: "100%", height: "100%" }}
+              data-swiper-parallax="-100"
+            >
+              <div className="second-image transitionfix " id="second-img">
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/second.png"
+                  alt="img"
+                  className="second-img"
+                />
+              </div>
+
+              <div id="white-bar"></div>
+
+              <div
+                data-swiper-parallax="-100"
+                style={{
+                  position: "absolute",
+                  left: "6%",
+                  width: "85%",
+                  bottom: "38%",
+                }}
+              >
+                <p id="quote">
+                  the Lounge Beach Scala dei Turchi is a location that perfectly
+                  integrates with the surrounding paradise, the sea, the sun and
+                  the famous seaside resort of Agrigento.
+                </p>
+              </div>
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png"
+                alt="logo-img"
+                className="white-circle"
+                id="white-circle"
+                data-swiper-parallax="-100"
+              />
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/second-btn.png"
+                alt="logo-img"
+                className="white-btn"
+                id="white-btn"
+                data-swiper-parallax="-200"
+              />
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-logo.png"
+                alt="logo-img"
+                className="white"
+                id="white"
+                data-swiper-parallax="-100"
+              />
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-left.png"
+                alt="logo-img"
+                className="rect"
+                id="rect-left"
+                data-swiper-parallax="-100"
+              />
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-right.png"
+                alt="logo-img"
+                className="rect-right"
+                id="rect-right"
+                data-swiper-parallax="-100"
+              />
+              <div id="leftarrow2" className="next-two prev">
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
+                  alt="leftarrow"
+                  id="leftarrowimg2"
+                />
+              </div>
+              <div id="leftarrow2-top" className="next-two next">
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png"
+                  alt="leftarrow"
+                  id="leftarrowimg2-top"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="swiper-slide" id="f3">
+            <div className="third" id="third">
+              <div className="third-container">
+                <div
+                  id="third-img-1"
+                  className="transitionfix"
+                  data-swiper-parallax="-200"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/third-img-01.png"
+                    alt="img1"
+                    className="third-img-01"
+                  />
+                </div>
+                <div id="third-contx" data-swiper-parallax="-300">
+                  <h1 id="third-txt">From the sea to the table</h1>
+                </div>
+                <div
+                  id="third-img-2"
+                  className="transitionfix"
+                  data-swiper-parallax="-200"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/third-img-02.png"
+                    alt="img1"
+                    className="third-img-02"
+                  />
+                </div>
+              </div>
+              <div id="leftarrow3" className="next-two next">
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png"
+                  alt="leftarrow"
+                  id="leftarrowimg3"
+                />
+              </div>
+              <div id="leftarrow3-top" className="next-two prev">
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
+                  alt="leftarrow"
+                  id="leftarrowimg3-top"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="swiper-slide" id="f4">
+            <div className="fourth" id="fourth">
+              <div className="fourth-container">
+                <div
+                  id="fourth-img-1"
+                  className="transitionfix"
+                  data-swiper-parallax="-200"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fourth-img-01.png"
+                    alt="img1"
+                    className="fourth-img-01"
+                  />
+                </div>
+                <div id="fourth-contx" data-swiper-parallax="-300">
+                  <h1 id="fourth-txt">
+                    Carefully sourced and selected champagnes, wines AND
+                    tailored drinks
+                  </h1>
+                </div>
+                <div
+                  id="fourth-img-2"
+                  className="transitionfix"
+                  data-swiper-parallax="-200"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fourth-img-02.png"
+                    alt="img2"
+                    className="fourth-img-02"
+                  />
+                </div>
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png"
+                  alt="logo-img"
+                  className="white-circle2"
+                  id="white-circle2"
+                />
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/longline.png"
+                  alt="longline"
+                  id="longline"
+                />
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/longline.png"
+                  alt="longline"
+                  id="longline-down"
+                />
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png"
+                  alt="logo-img"
+                  className="white-circle3"
+                  id="white-circle3"
+                />
+              </div>
+              <div id="leftarrow4" className="next-two prev">
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
+                  alt="leftarrow"
+                  id="leftarrowimg4"
+                />
+              </div>
+              <div id="leftarrow4-top" className="next-two next">
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png"
+                  alt="leftarrow"
+                  id="leftarrowimg4-top"
+                />
+              </div>
+            </div>
+          </div>
+          <div className="swiper-slide" id="f5">
+            <div className="fifth" id="fifth">
+              <div
+                id="fifth-img-1"
+                className="transitionfix"
+                data-swiper-parallax="-200"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-round.png"
+                  alt="img2"
+                  className="fifth-img-01"
+                />
+              </div>
+              <div
+                id="fifth-img-2"
+                className="transitionfix"
+                data-swiper-parallax="-400"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-second.png"
+                  alt="img2"
+                  className="fifth-img-02"
+                />
+              </div>
+
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png"
+                alt="logo-img"
+                className="white-circle-fifth"
+                id="white-circle-fifth"
+                data-swiper-parallax="-250"
+              />
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-btn.png"
+                alt="logo-img"
+                className="white-btn-fifth"
+                id="white-btn-fifth"
+                data-swiper-parallax="-250"
+              />
+              <div id="leftarrow5" className="next-two prev">
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
+                  alt="leftarrow"
+                  id="leftarrowimg5"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      </div> 
-      <!-- Swiper JS -->
-      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
-      <!-- Initialize Swiper -->
-      <script>
-         var swiper = new Swiper('.swiper-container', {
-               effect: 'cube',
-               observer: true,
-               observeParents: true,
-               grabCursor: true,
-               cubeEffect: {
-                 
-                 shadow: false,
-                 slideShadows: true,
-                 shadowOffset: 20,
-                 shadowScale: 0.94,
-               }, 
-               speed: 800,
-               parallax: true,
-         navigation: {
-           nextEl: '.next',
-           prevEl: '.prev'
-         }
-         });
-         
-          setTimeout(function () {
-           $(".loader-div").fadeOut();
-           $(".tc1").addClass("transl");
-           $(".tc2").addClass("transl");
-           $(".tc3").addClass("transl");
-           
-         }, 2000);
-         
-         setInterval(function () {
-          if (swiper.activeIndex === 0) {
-             $(".second-img").removeClass("zoomOut");
-           }
-           if (swiper.activeIndex === 1) {
-             $(".second-img").addClass("zoomOut");
-             $(".third-img-01").removeClass("zoomOut");
-             $(".third-img-02").removeClass("zoomOut");
-             $(".fifth").css("opacity","0");
-         
-           } if (swiper.activeIndex === 2) {
-             $(".third-img-01").addClass("zoomOut");
-             $(".third-img-02").addClass("zoomOut");
-             $(".second-img").removeClass("zoomOut");
-             $(".fourth-img-01").removeClass("zoomOut");
-             $(".fourth-img-02").removeClass("zoomOut");
-             $(".fifth").css("opacity","0");
-            
-           }if (swiper.activeIndex === 3) {
-             $(".fourth-img-01").addClass("zoomOut");
-             $(".fourth-img-02").addClass("zoomOut");
-             $(".third-img-01").removeClass("zoomOut");
-             $(".third-img-02").removeClass("zoomOut");
-             $(".fifth-img-01").removeClass("zoomOut");
-             $(".fifth-img-02").removeClass("zoomOut");
-             $(".fifth").css("opacity","1");
-            
-             
-             
-             
-           }if (swiper.activeIndex === 4) {
-             $(".fifth-img-01").addClass("zoomOut");
-             $(".fifth-img-02").addClass("zoomOut");
-             $(".fourth-img-01").removeClass("zoomOut");
-             $(".fourth-img-02").removeClass("zoomOut");
-         
-           }
-         }, 100);
-         
-         
-         
-         const getSize = (width, heightPercentage) => {
-           return `${Math.min(
-             (width * window.innerWidth) / 100,
-             (window.innerHeight * heightPercentage) / 100
-           )}px`;
-         };
-         
-         const getHeight = (heightPercentage) => {
-           return `${(window.innerHeight * heightPercentage) / 100}px`;
-         };
-         
-         function sizes() {
-           document.getElementById("social1").style.width = getSize(10.145, 5.5);
-           document.getElementById("social1").style.height = getSize(10.145, 5.5);
-           document.getElementById("social1-img").style.width = getSize(
-             10.145,
-             5.5
-           );
-           document.getElementById("social1-img").style.height = getSize(
-             10.145,
-             5.5
-           );
-         
-           document.getElementById("social2").style.width = getSize(10.145, 5.5);
-           document.getElementById("social2").style.height = getSize(10.145, 5.5);
-           document.getElementById("social2-img").style.width = getSize(
-             10.145,
-             5.5
-           );
-           document.getElementById("social2-img").style.height = getSize(
-             10.145,
-             5.5
-           );
-         
-           document.getElementById("logo").style.width = getSize(35.266, 16);
-           document.getElementById("logo").style.height = getSize(25.6, 12.3);
-           document.getElementById("logo").style.marginTop = getSize(6.039, 3);
-         
-           document.getElementById("name").style.fontSize = getSize(6.763, 3.35);
-           document.getElementById("name").style.marginTop = getSize(8.454, 4.2);
-         
-           document.getElementById("tag").style.marginTop = getSize(4.106, 2);
-           document.getElementById("tag").style.fontSize = getSize(2.899, 1.4);
-         
-           document.getElementById("divider").style.width = getSize(35.749, 18);
-         /*  document.getElementById("divider").style.left = getSize(33.333, 16.5);*/
-           document.getElementById("divider").style.marginTop = getSize(7.488, 4);
-           document.getElementById("divider").style.height = getSize(0.121, 0.6);
-           document.getElementById("contact-wrapper").style.marginTop = getSize(
-             4.831,
-             2.4
-           );
-         
-           document.getElementById("contact-container1").style.marginTop = getSize(
-             6,
-             3
-           );
-           document.getElementById("contact-container2").style.marginTop = getSize(
-             6,
-             3
-           );
-           document.getElementById("contact-container3").style.marginTop = getSize(
-             6,
-             3
-           );
-           document.getElementById("contact-container4").style.marginTop = getSize(
-             6,
-             3
-           );
-           document.getElementById("contact-container5").style.marginTop = getSize(
-             6,
-             3
-           );
-         
-           document.getElementById("icon1").style.width = getSize(7.246, 4);
-           document.getElementById("icon2").style.width = getSize(7.246, 4);
-           document.getElementById("icon3").style.width = getSize(7.246, 4);
-           document.getElementById("icon4").style.width = getSize(7.246, 4);
-           document.getElementById("icon5").style.width = getSize(7.246, 4);
-         
-           document.getElementById("icon-tag-1").style.width = getSize(52.415, 26);
-           document.getElementById("icon-tag-1").style.fontSize = getSize(
-             3.382,
-             1.8
-           );
-           document.getElementById("icon-tag-1").style.marginLeft = getSize(4, 2);
-         
-           document.getElementById("icon-tag-2").style.width = getSize(52.415, 26);
-           document.getElementById("icon-tag-2").style.fontSize = getSize(
-             3.382,
-             1.8
-           );
-           document.getElementById("icon-tag-2").style.marginLeft = getSize(4, 2);
-         
-           document.getElementById("icon-tag-3").style.width = getSize(52.415, 26);
-           document.getElementById("icon-tag-3").style.fontSize = getSize(
-             3.382,
-             1.8
-           );
-           document.getElementById("icon-tag-3").style.marginLeft = getSize(4, 2);
-         
-           document.getElementById("icon-tag-4").style.width = getSize(52.415, 26);
-           document.getElementById("icon-tag-4").style.fontSize = getSize(
-             3.382,
-             1.8
-           );
-           document.getElementById("icon-tag-4").style.marginLeft = getSize(4, 2);
-         
-           document.getElementById("icon-tag-5").style.width = getSize(52.415, 26);
-           document.getElementById("icon-tag-5").style.fontSize = getSize(
-             3.382,
-             1.8
-           );
-           document.getElementById("icon-tag-5").style.marginLeft = getSize(4, 2);
-         
-           document.getElementById("primary-btn").style.marginTop = getSize(15, 8);
-           document.getElementById("primary-btn").style.width = getSize(
-             40.258,
-             21
-           );
-         
-           document.getElementById("sharebtn").style.width = getSize(10, 5);
-           document.getElementById("sharebtn").style.height = getSize(10, 5);
-         
-          
-           document.getElementById("leftarrow2").style.width = getSize(2.415, 1.8);
-           document.getElementById("leftarrow2").style.height = getSize(4.348, 2.5);
-         
-           document.getElementById("leftarrow2-top").style.width = getSize(2.415, 1.8);
-           document.getElementById("leftarrow2-top").style.height = getSize(4.348, 2.5);
-         
-           document.getElementById("leftarrow3").style.width = getSize(2.415, 1.8);
-           document.getElementById("leftarrow3").style.height = getSize(4.348, 2.5);
-         
-           document.getElementById("leftarrow3-top").style.width = getSize(2.415, 1.8);
-           document.getElementById("leftarrow3-top").style.height = getSize(4.348, 2.5);
-         
-           document.getElementById("leftarrow4").style.width = getSize(2.415, 1.8);
-           document.getElementById("leftarrow4").style.height = getSize(4.348, 2.5);
-         
-           document.getElementById("leftarrow4-top").style.width = getSize(2.415, 1.8);
-           document.getElementById("leftarrow4-top").style.height = getSize(4.348, 2.5);
-         
-           document.getElementById("leftarrow5").style.width = getSize(2.415, 1.8);
-           document.getElementById("leftarrow5").style.height = getSize(4.348, 2.5);
-         
-        
-         
-           document.getElementById("leftarrowimg2").style.width = getSize(
-             2.415,
-             1.8
-           );
-           document.getElementById("leftarrowimg2-top").style.width = getSize(
-             2.415,
-             1.8
-           );
-         
-            document.getElementById("leftarrowimg2").style.height = getSize(
-             4.348,
-             2.5
-           );
-         
-         
-         
-         
-            document.getElementById("leftarrowimg3").style.width = getSize(
-             2.415,
-             1.8
-           );
-           
-         
-           document.getElementById("leftarrowimg3").style.height = getSize(
-             4.348,
-             2.5
-           );
-         
-           document.getElementById("leftarrowimg3-top").style.width = getSize(
-             2.415,
-             1.8
-           );
-           document.getElementById("leftarrowimg3-top").style.height = getSize(
-             4.348,
-             2.5
-           );
-         
-           document.getElementById("leftarrowimg4").style.width = getSize(
-             2.415,
-             1.8
-           );
-         
-           document.getElementById("leftarrowimg4").style.height = getSize(
-             4.348,
-             2.5
-           );
-         
-           document.getElementById("leftarrowimg4-top").style.width = getSize(
-             2.415,
-             1.8
-           );
-           document.getElementById("leftarrowimg4-top").style.height = getSize(
-             4.348,
-             2.5
-           );
-         
-           document.getElementById("leftarrowimg5").style.width = getSize(
-             2.415,
-             1.8
-           );
-         
-           document.getElementById("leftarrowimg5").style.height = getSize(
-             4.348,
-             2.5
-           );
-         
-         
-         
-         
-         
-           
-         
-         
-         
-         
-            document.getElementById("leftarrowimg2-top").style.height = getSize(
-             4.348,
-             2.5
-           );
-         
-         
-           
-         
-             document.getElementById("second-img").style.borderBottomLeftRadius =
-             getSize(30, 18.5);
-             document.getElementById("second-img").style.borderTopRightRadius =
-             getSize(30, 18.5);
-         
-         
-             document.getElementById("third-img-1").style.borderTopRightRadius =
-             getSize(33, 20);
-             document.getElementById("third-img-2").style.borderBottomLeftRadius =
-             getSize(33, 20);
-         
-             document.getElementById("fourth-img-1").style.borderTopLeftRadius =
-             getSize(33, 20);
-             document.getElementById("fourth-img-2").style.borderBottomRightRadius =
-             getSize(33, 20);
-         
-         
-         
-             document.getElementById("white-bar").style.height =
-             getSize(4,2);
-         
-         
-             
-          
-            document.getElementById("close-icon-share").style.height = getSize(
-             5,
-             3
-           );
-           document.getElementById("close-icon-share").style.width = getSize(5, 3);
-         
-           document.getElementById("share-headline").style.height = getSize(
-             5,
-             2.5
-           );
-         
-           document.getElementById("icon-grid").style.gridGap = getSize(2, 1);
-         
-           document.getElementById("share-img1").style.width = getSize(11, 5);
-           document.getElementById("share-img1").style.height = getSize(11, 5);
-         
-           document.getElementById("share-img2").style.width = getSize(11, 5);
-           document.getElementById("share-img2").style.height = getSize(11, 5);
-         
-           document.getElementById("share-img3").style.width = getSize(11, 5);
-           document.getElementById("share-img3").style.height = getSize(11, 5);
-         
-           document.getElementById("share-img4").style.width = getSize(11, 5);
-           document.getElementById("share-img4").style.height = getSize(11, 5);
-         
-           document.getElementById("share-img5").style.width = getSize(11, 5);
-           document.getElementById("share-img5").style.height = getSize(11, 5);
-         
-           document.getElementById("share-img6").style.width = getSize(11, 5);
-           document.getElementById("share-img6").style.height = getSize(11, 5);
-         
-           document.getElementById("share-img7").style.width = getSize(11, 5);
-           document.getElementById("share-img7").style.height = getSize(11, 5);
-         
-           document.getElementById("share-img8").style.width = getSize(11, 5);
-           document.getElementById("share-img8").style.height = getSize(11, 5);
-         
-           document.getElementById("scan-save-txt").style.fontSize = getSize(
-             5,
-             2.5
-           );
-         
-           document.getElementById("qr-img").style.width = getSize(35, 22.5);
-           document.getElementById("qr-img").style.height = getSize(35, 22.5);
-         
-          
-         
-          
-           
-         
-          
-         
-           document.getElementById("scan-save-txt").style.marginBottom = getSize(
-             4,
-             4
-           );
-           document.getElementById("share-headline").style.fontSize = getSize(
-             5,
-             2.5
-           );
-           document.getElementById("share-headline").style.marginBottom = getSize(
-             4,
-             3
-           );
-         
-           
-           document.getElementById("lottie").style.width = getSize(7, 4.5);
-           document.getElementById("lottie").style.height = getSize(7, 4.5);
-         
-   
-           document.getElementById("quote").style.lineHeight = getSize(3.5, 1.8);
-           document.getElementById("quote").style.fontSize = getSize(4, 1.8);
-         
-           document.getElementById("white").style.width = getSize(24, 13);
-           document.getElementById("white-btn").style.width = getSize(55, 25);
-           document.getElementById("white-circle").style.width = getSize(3.5, 2);
-         
-           document.getElementById("rect-left").style.width = getSize(0.5, 0.25);
-           document.getElementById("rect-right").style.width = getSize(0.5, 0.25);
-         
-           document.getElementById("third-txt").style.fontSize = getSize(4.2, 2.2);
-           document.getElementById("fourth-txt").style.fontSize = getSize(4.2, 2.2);
-         
-           document.getElementById("white-circle2").style.width = getSize(3, 1.8);
-           document.getElementById("white-circle3").style.width = getSize(3, 1.8);
-         
-           document.getElementById("fifth-img-1").style.width = getSize(90,45);
-           document.getElementById("fifth-img-1").style.height = getSize(90,45);
-         
-         
-           document.getElementById("fifth-img-2").style.width = getSize(100,50);
-           document.getElementById("fifth-img-2").style.height = getSize(100,50);
-         
-         
-           document.getElementById("white-circle-fifth").style.width = getSize(3,1.8);
-           document.getElementById("white-circle-fifth").style.height = getSize(3,1.8);
-           document.getElementById("white-btn-fifth").style.width = getSize(55,25);
-           
-        
-         
-         
-         }
-         
-          function openSlide() {
-           $(".share-slide").addClass("open");
-           $(".icon-grid").addClass("open").delay(500);
-           $(".share-headline").addClass("open").delay(500);
-           $(".scan-and-save-txt").addClass("open").delay(500);
-           $(".qr-code-container").addClass("open").delay(500);
-           $(".close-icon").removeClass("closeAnim");
-         }
-         
-         function closeSlide() {
-           $(".share-slide").removeClass("open");
-           $(".icon-grid").removeClass("open").delay(500);
-           $(".share-headline").removeClass("open").delay(500);
-           $(".scan-and-save-txt").removeClass("open").delay(500);
-           $(".qr-code-container").removeClass("open").delay(500);
-           $(".close-icon").addClass("closeAnim").delay(1000);
-         }
-         
-         function play2() {
-           var audioElement = document.getElementById("audio");
-         
-           if (audioElement.paused) {
-             /* Audio link for notification */
-             audioElement.play();
-           } else {
-             audioElement.pause();
-           }
-         }
-      </script>
-   </body>
-</html>
+    </div>
+  );
+};
+
+export default Nino;
