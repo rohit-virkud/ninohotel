@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
     <title>Nino Sanfilippo</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -26,10 +25,9 @@
     />
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <!-- Link Swiper's CSS -->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
     <link
       rel="stylesheet"
-      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.css"
     />
     <style type="text/css">
       * {
@@ -43,11 +41,11 @@
         font-family: "Montserrat", sans-serif;
         font-family: "Roboto", sans-serif;
       }
+
       html,
       body {
         position: relative;
         height: 100%;
-        background: black;
       }
 
       body {
@@ -67,8 +65,14 @@
       .fourth,
       .fifth {
         overflow: hidden;
+      }
+
+      .swiper-container {
         width: 100%;
         height: 100%;
+        position: absolute;
+        left: 50%;
+        margin-left: -50%;
       }
 
       a,
@@ -80,6 +84,7 @@
       }
       img {
         width: 100%;
+        height: 100%;
       }
 
       /*Loader*/
@@ -204,28 +209,423 @@
         }
       }
       /*end loader*/
-
       .swiper-container {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         position: absolute;
         left: 50%;
         margin-left: -50%;
+        color: white;
       }
+      .swiper-wrapper {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        display: flex;
+        transition-property: transform;
+        box-sizing: content-box;
+      }
+
       .swiper-slide {
+        background: #fff;
+        width: 100% !important;
+        height: 100% !important;
+      }
+
+      .one {
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        color: black;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+
+      .one,
+      .second,
+      .third,
+      .fourth,
+      .fifth {
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+      .one-wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+      }
+      .tc1 {
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+        -webkit-transition: 1s all ease-out;
+        -o-transition: 1s all ease-out;
+        transition: 1s all ease-out;
+      }
+
+      .tc2 {
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+        -webkit-transition: 0.8s all ease-out;
+        -o-transition: 0.8s all ease-out;
+        transition: 0.8s all ease-out;
+      }
+
+      .tc3 {
+        -webkit-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        transform: translateX(50%);
+        -webkit-transition: 0.6s all ease-out;
+        -o-transition: 0.6s all ease-out;
+        transition: 0.6s all ease-out;
+      }
+
+      .transl {
+        -webkit-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+        transform: translateX(0%);
+      }
+      #logo {
+      }
+      #name {
+        font-family: "Cormorant", serif;
+        font-style: normal;
+        font-weight: 600;
+        /* or 75% */
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+      #tag {
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #181e2a;
+        width: 50%;
+        text-align: center;
+      }
+      #divider {
+        background: url("gold-textured-background.png") no-repeat;
+      }
+      .contact-container {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+      .phone-icon {
+        height: auto;
+      }
+      .icon-tag {
+        font-family: "Montserrat", sans-serif;
+        font-style: normal;
+        font-weight: 400;
+      }
+      #primary-btn {
+        height: auto;
+      }
+      #social-wrapper {
+        position: absolute;
+        top: 2%;
+        left: 2%;
+      }
+      #sharebtn {
+        position: absolute;
+        top: 2.5%;
+        right: 4%;
+      }
+      #leftarrow {
+        position: absolute;
+        bottom: 3%;
+        right: 8%;
+      }
+      .second {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+      .second-image {
+        width: 95%;
+        height: 95%;
+        overflow: hidden;
+      }
+      #white-bar {
+        position: absolute;
+        width: 95%;
+        background: white;
+        top: 65%;
+      }
+      #quote {
+        font-family: Bellefair;
+        font-style: normal;
+        font-weight: normal;
+        -webkit-transform-origin: top left;
+        -ms-transform-origin: top left;
+        transform-origin: top left;
+
+        text-align: center;
+        transform: translate3d(0px, 0px, 0px) rotate(270deg) !important;
+      }
+      .white {
+        position: absolute;
+        height: auto;
+        bottom: 5%;
+      }
+      .white-btn {
+        position: absolute;
+        height: auto;
+        bottom: 18%;
+      }
+      .white-circle {
+        position: absolute;
+        height: auto;
+        bottom: 28%;
+      }
+      .rect {
+        position: absolute;
+        height: 6%;
+        left: 6%;
+        bottom: 18%;
+      }
+      .rect-right {
+        position: absolute;
+        height: 6%;
+        right: 6%;
+        bottom: 18%;
+      }
+      #leftarrow2 {
+        position: absolute;
+        bottom: 3.5%;
+        left: 5%;
+      }
+      #leftarrow2-top {
+        position: absolute;
+        top: 3.5%;
+        right: 5%;
+      }
+      .third,
+      .fourth {
+        width: 100%;
+        height: 100%;
+        background: url("third-img.png") no-repeat;
         background-size: cover;
         background-position: center;
-        box-sizing: border-box;
-
-        background: white;
-
-        color: white;
-        font-family: "Roboto", sans-serif;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
       }
-      img {
+      .fourth {
+        background: #e7f9fd;
+      }
+      .third-container,
+      .fourth-container {
+        width: 95%;
+        height: 95%;
+      }
+      #third-img-1,
+      #fourth-img-1 {
         width: 100%;
+        height: 42%;
+        overflow: hidden;
       }
+      #third-img-2,
+      #fourth-img-2 {
+        width: 100%;
+        height: 42%;
+        overflow: hidden;
+      }
+      #third-contx,
+      #fourth-contx {
+        width: 100%;
+        height: 16%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-negative: 0;
+        flex-shrink: 0;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+      #third-txt,
+      #fourth-txt {
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: normal;
+        line-height: 125%;
+        /* or 125% */
+        text-transform: uppercase;
+        color: #8c533b;
+        width: 35%;
+      }
+      #fourth-txt {
+        width: 70%;
+      }
+      #leftarrow3 {
+        position: absolute;
+        top: 4%;
+        right: 5%;
+      }
+      #leftarrow3-top {
+        position: absolute;
+        bottom: 3.5%;
+        left: 5%;
+      }
+      #leftarrow4 {
+        position: absolute;
+        top: 3.5%;
+        left: 5%;
+      }
+      #leftarrow4-top {
+        position: absolute;
+        bottom: 3.5%;
+        right: 5%;
+      }
+      #longline {
+        position: absolute;
+        width: 0.4%;
+        height: 35%;
+        top: 10%;
+        right: 6%;
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      #longline-down {
+        position: absolute;
+        width: 0.4%;
+        height: 35%;
+        bottom: 10%;
+        left: 6%;
+        -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      .white-circle2 {
+        position: absolute;
+        height: auto;
+        top: 6%;
+        right: 5%;
+      }
+      .white-circle3 {
+        position: absolute;
+        height: auto;
+        bottom: 6%;
+        left: 5%;
+      }
+      .fifth {
+        background: #f3ede2;
+        width: 100%;
+        height: 100%;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+      }
+      #fifth-img-1 {
+        overflow: hidden;
+        border-radius: 50%;
+        position: absolute;
+        top: 2%;
+      }
+      #fifth-img-2 {
+        overflow: hidden;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        position: absolute;
+        bottom: 0;
+      }
+      .white-circle-fifth {
+        position: absolute;
+        height: auto;
 
+        top: 42%;
+      }
+      .white-btn-fifth {
+        position: absolute;
+        height: auto;
+        top: 33%;
+      }
+      #leftarrow5 {
+        position: absolute;
+        top: 3.5%;
+        left: 5%;
+      }
+      #leftarrow5-top {
+        position: absolute;
+        top: 3.5%;
+        right: 5%;
+      }
+      .second-img,
+      .third-img-01,
+      .third-img-02,
+      .fourth-img-01,
+      .fourth-img-02,
+      .fifth-img-01,
+      .fifth-img-02 {
+        z-index: -1;
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2);
+        -webkit-transition: 5s -webkit-transform ease-out;
+        transition: 5s -webkit-transform ease-out;
+        -o-transition: 5s transform ease-out;
+        transition: 5s transform ease-out;
+        transition: 5s transform ease-out, 5s -webkit-transform ease-out;
+      }
+      .zoomOut {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+      }
+      .transitionfix {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+      }
       /*share slide*/
       .share-slide {
         position: fixed;
@@ -431,6 +831,17 @@
           right: 9%;
         }
       }
+
+      #third-img-1,
+      #third-img-2,
+      .second-image,
+      #fourth-img-1,
+      #fourth-img-2,
+      #fifth-img-1,
+      #fifth-img-2 {
+        z-index: 1;
+        overflow: hidden;
+      }
       #f1,
       #f1,
       #f3,
@@ -442,497 +853,495 @@
     </style>
   </head>
   <body onload="sizes()">
-    <div style="position: relative; width: 100%; height: 100%">
-      <div class="loader-div">
-        <h1>
-          <span class="let1">l</span>
-          <span class="let2">o</span>
-          <span class="let3">a</span>
-          <span class="let4">d</span>
-          <span class="let5">i</span>
-          <span class="let6">n</span>
-          <span class="let7">g</span>
-        </h1>
-      </div>
-      <div class="share-slide" id="share-slide" style="border: none">
-        <img
-          src="https://m.artcoolcards.com/parisis/media/closeicon.png"
-          alt="close-icon"
-          class="close-icon"
-          onclick="closeSlide()"
-          id="close-icon-share"
-        />
-        <div class="share-slide-share-icons">
-          <h2 class="share-headline" id="share-headline">SHARE MY CARD</h2>
-          <div class="icon-grid" id="icon-grid">
-            <a
-              href="sms:?&body=/* You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo */"
-              ><img
-                src="https://m.artcoolcards.com/parisis/media/sms.png"
-                alt="sms-img"
-                id="share-img1"
-            /></a>
-            <a
-              href="viber://forward?text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo"
-              ><img
-                src="https://m.artcoolcards.com/parisis/media/cs.png"
-                alt="cs-img"
-                id="share-img2"
-            /></a>
-            <a
-              href="whatsapp://send?text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo"
-              ><img
-                src="https://m.artcoolcards.com/parisis/media/whatsapp.png"
-                alt="whatsapp-img"
-                id="share-img3"
-            /></a>
-            <a
-              href="mailto:?subject=My Digital Business Card&amp;body=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo"
-              ><img
-                src="https://m.artcoolcards.com/parisis/media/dropbox 187.png"
-                alt="dropbox-img"
-                id="share-img4"
-            /></a>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://www.facebook.com/sharer.php?href=https://artcoolcards.com/card/nino-sanfilippo&display=popup"
-              ><img
-                src="https://m.artcoolcards.com/parisis/media/fb9.png"
-                alt="fb-img"
-                id="share-img5"
-            /></a>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://t.me/share/url?url=https://artcoolcards.com/card/parisis&text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo"
-              ><img
-                src="https://m.artcoolcards.com/parisis/media/telegram 191.png"
-                alt="tel-img"
-                id="share-img6"
-            /></a>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="http://twitter.com/share?text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/parisis&url=https://artcoolcards.com/card/nino-sanfilippo"
-              ><img
-                src="https://m.artcoolcards.com/parisis/media/twitter8.png"
-                alt="twit-img"
-                id="share-img7"
-            /></a>
-            <a
-              rel="noopener noreferrer"
-              target="_blank"
-              href="https://www.linkedin.com/sharing/share-offsite/?url=https://artcoolcards.com/card/nino-sanfilippo"
-              ><img
-                src="https://m.artcoolcards.com/parisis/media/linkedin3.png"
-                alt="linkedin-img"
-                id="share-img8"
-            /></a>
-          </div>
-          <h2 class="scan-and-save-txt" id="scan-save-txt">SCAN AND SAVE</h2>
-          <div class="qr-code-container">
-            <img
-              src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/qr-code.png"
-              alt="qr-img"
-              id="qr-img"
-            />
-          </div>
+    <div class="loader-div">
+      <h1>
+        <span class="let1">l</span>
+        <span class="let2">o</span>
+        <span class="let3">a</span>
+        <span class="let4">d</span>
+        <span class="let5">i</span>
+        <span class="let6">n</span>
+        <span class="let7">g</span>
+      </h1>
+    </div>
+    <div class="share-slide" id="share-slide" style="border: none">
+      <img
+        src="https://m.artcoolcards.com/parisis/media/closeicon.png"
+        alt="close-icon"
+        class="close-icon"
+        onclick="closeSlide()"
+        id="close-icon-share"
+      />
+      <div class="share-slide-share-icons">
+        <h2 class="share-headline" id="share-headline">SHARE MY CARD</h2>
+        <div class="icon-grid" id="icon-grid">
+          <a
+            href="sms:?&body=/* You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo */"
+            ><img
+              src="https://m.artcoolcards.com/parisis/media/sms.png"
+              alt="sms-img"
+              id="share-img1"
+          /></a>
+          <a
+            href="viber://forward?text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo"
+            ><img
+              src="https://m.artcoolcards.com/parisis/media/cs.png"
+              alt="cs-img"
+              id="share-img2"
+          /></a>
+          <a
+            href="whatsapp://send?text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo"
+            ><img
+              src="https://m.artcoolcards.com/parisis/media/whatsapp.png"
+              alt="whatsapp-img"
+              id="share-img3"
+          /></a>
+          <a
+            href="mailto:?subject=My Digital Business Card&amp;body=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo"
+            ><img
+              src="https://m.artcoolcards.com/parisis/media/dropbox 187.png"
+              alt="dropbox-img"
+              id="share-img4"
+          /></a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://www.facebook.com/sharer.php?href=https://artcoolcards.com/card/nino-sanfilippo&display=popup"
+            ><img
+              src="https://m.artcoolcards.com/parisis/media/fb9.png"
+              alt="fb-img"
+              id="share-img5"
+          /></a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://t.me/share/url?url=https://artcoolcards.com/card/parisis&text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/nino-sanfilippo"
+            ><img
+              src="https://m.artcoolcards.com/parisis/media/telegram 191.png"
+              alt="tel-img"
+              id="share-img6"
+          /></a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="http://twitter.com/share?text=You can view my Digital Business Card by clicking the following link: https://artcoolcards.com/card/parisis&url=https://artcoolcards.com/card/nino-sanfilippo"
+            ><img
+              src="https://m.artcoolcards.com/parisis/media/twitter8.png"
+              alt="twit-img"
+              id="share-img7"
+          /></a>
+          <a
+            rel="noopener noreferrer"
+            target="_blank"
+            href="https://www.linkedin.com/sharing/share-offsite/?url=https://artcoolcards.com/card/nino-sanfilippo"
+            ><img
+              src="https://m.artcoolcards.com/parisis/media/linkedin3.png"
+              alt="linkedin-img"
+              id="share-img8"
+          /></a>
+        </div>
+        <h2 class="scan-and-save-txt" id="scan-save-txt">SCAN AND SAVE</h2>
+        <div class="qr-code-container">
+          <img
+            src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/qr-code.png"
+            alt="qr-img"
+            id="qr-img"
+          />
         </div>
       </div>
+    </div>
 
-      <!-- Swiper -->
-      <div class="swiper-container" id="sc">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" id="f1">
-            <div class="one-wrapper" data-swiper-parallax="-200">
-              <div class="one" id="one">
-                <div class="arrow arrow-first next tc1"></div>
-                <div class="arrow arrow-second next tc1"></div>
-                <audio id="audio">
-                  <source
-                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/WhatsApp Audio 2021-08-09 at 1.38.11 PM.mpeg"
-                    type="audio/mpeg"
-                  />
-                </audio>
-                <div id="social-wrapper" class="tc2">
-                  <a
-                    href="https://www.facebook.com/LoungeBeachScaladeiTurchi/"
-                    target="_blank"
-                    id="social1"
-                    ><img
-                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fb.png"
-                      alt="social"
-                      id="social1-img"
-                  /></a>
-                  <a
-                    href="https://www.instagram.com/lounge_beach_scala_dei_turchi/?utm_medium=copy_link"
-                    target="_blank"
-                    id="social2"
-                    ><img
-                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/insta.png"
-                      alt="social"
-                      id="social2-img"
-                  /></a>
-                </div>
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/share-btn.png"
-                  id="sharebtn"
-                  alt="social"
-                  class="tc2"
-                  onclick="openSlide()"
+    <!-- Swiper -->
+    <div class="swiper-container" id="sc">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" id="f1">
+          <div class="one-wrapper" data-swiper-parallax="-200">
+            <div class="one" id="one">
+              <div class="arrow arrow-first next tc1"></div>
+              <div class="arrow arrow-second next tc1"></div>
+              <audio id="audio">
+                <source
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/WhatsApp Audio 2021-08-09 at 1.38.11 PM.mpeg"
+                  type="audio/mpeg"
                 />
-                <lottie-player
-                  src="https://raw.githubusercontent.com/rohit-virkud/template02-light/main/hj.json"
-                  background="transparent"
-                  speed="1"
-                  class="lottie-anim tc1"
-                  id="lottie"
-                  onclick="play2()"
-                  loop
-                  autoplay
-                  style="
-                    cursor: pointer;
-                    z-index: 999;
-                    stroke: black;
-                    bottom: 2%;
-                    left: 5%;
-                  "
-                ></lottie-player>
+              </audio>
+              <div id="social-wrapper" class="tc2">
+                <a
+                  href="https://www.facebook.com/LoungeBeachScaladeiTurchi/"
+                  target="_blank"
+                  id="social1"
+                  ><img
+                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fb.png"
+                    alt="social"
+                    id="social1-img"
+                /></a>
+                <a
+                  href="https://www.instagram.com/lounge_beach_scala_dei_turchi/?utm_medium=copy_link"
+                  target="_blank"
+                  id="social2"
+                  ><img
+                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/insta.png"
+                    alt="social"
+                    id="social2-img"
+                /></a>
+              </div>
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/share-btn.png"
+                id="sharebtn"
+                alt="social"
+                class="tc2"
+                onclick="openSlide()"
+              />
+              <lottie-player
+                src="https://raw.githubusercontent.com/rohit-virkud/template02-light/main/hj.json"
+                background="transparent"
+                speed="1"
+                class="lottie-anim tc1"
+                id="lottie"
+                onclick="play2()"
+                loop
+                autoplay
+                style="
+                  cursor: pointer;
+                  z-index: 999;
+                  stroke: black;
+                  bottom: 2%;
+                  left: 5%;
+                "
+              ></lottie-player>
 
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/logo.png"
-                  id="logo"
-                  alt="logo"
-                  class="tc3"
-                />
-                <h1 id="name" class="tc3">NINO SANFILIPPO</h1>
-                <p id="tag" class="tc3">Owner</p>
-                <div id="divider" class="tc3"></div>
-                <div class="contact-wrapper tc3" id="contact-wrapper">
-                  <a
-                    href="tel:+39 393 9618010"
-                    class="contact-container"
-                    id="contact-container1"
-                  >
-                    <img
-                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/phone-icon.png"
-                      alt="icon"
-                      class="phone-icon"
-                      id="icon1"
-                    />
-                    <p class="icon-tag" id="icon-tag-1">+39 393 9618010</p>
-                  </a>
-                  <a
-                    href="tel:+39 3313597864"
-                    class="contact-container"
-                    id="contact-container2"
-                  >
-                    <img
-                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/home-icon.png"
-                      alt="icon"
-                      class="phone-icon"
-                      id="icon2"
-                    />
-                    <p class="icon-tag" id="icon-tag-2">+39 3313597864</p>
-                  </a>
-                  <a
-                    href="mailto:info@lbscaladeiturchi.com"
-                    class="contact-container"
-                    id="contact-container3"
-                  >
-                    <img
-                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/msg-icon.png"
-                      alt="icon"
-                      class="phone-icon"
-                      id="icon3"
-                    />
-                    <p class="icon-tag" id="icon-tag-3">
-                      info@lbscaladeiturchi.com
-                    </p>
-                  </a>
-                  <a
-                    href="https://maps.google.com/?q=Stada provinciale 68 92010 Realmonte (AG)"
-                    class="contact-container"
-                    target="_blank"
-                    id="contact-container4"
-                  >
-                    <img
-                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/location-icon.png"
-                      alt="icon"
-                      class="phone-icon"
-                      id="icon4"
-                    />
-                    <p class="icon-tag" id="icon-tag-4">
-                      Stada provinciale 68 92010 Realmonte (AG)
-                    </p>
-                  </a>
-                  <a
-                    href="https://www.lbscaladeiturchi.com/"
-                    target="_blank"
-                    class="contact-container"
-                    id="contact-container5"
-                  >
-                    <img
-                      src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/web-icon.png"
-                      alt="icon"
-                      class="phone-icon"
-                      id="icon5"
-                    />
-                    <p class="icon-tag" id="icon-tag-5">
-                      www.lbscaladeiturchi.com
-                    </p>
-                  </a>
-                </div>
-                <a href="#!" class="tc2">
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/logo.png"
+                id="logo"
+                alt="logo"
+                class="tc3"
+              />
+              <h1 id="name" class="tc3">NINO SANFILIPPO</h1>
+              <p id="tag" class="tc3">Owner</p>
+              <div id="divider" class="tc3"></div>
+              <div class="contact-wrapper tc3" id="contact-wrapper">
+                <a
+                  href="tel:+39 393 9618010"
+                  class="contact-container"
+                  id="contact-container1"
+                >
                   <img
-                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/btn.png"
+                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/phone-icon.png"
                     alt="icon"
-                    id="primary-btn"
+                    class="phone-icon"
+                    id="icon1"
                   />
+                  <p class="icon-tag" id="icon-tag-1">+39 393 9618010</p>
+                </a>
+                <a
+                  href="tel:+39 3313597864"
+                  class="contact-container"
+                  id="contact-container2"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/home-icon.png"
+                    alt="icon"
+                    class="phone-icon"
+                    id="icon2"
+                  />
+                  <p class="icon-tag" id="icon-tag-2">+39 3313597864</p>
+                </a>
+                <a
+                  href="mailto:info@lbscaladeiturchi.com"
+                  class="contact-container"
+                  id="contact-container3"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/msg-icon.png"
+                    alt="icon"
+                    class="phone-icon"
+                    id="icon3"
+                  />
+                  <p class="icon-tag" id="icon-tag-3">
+                    info@lbscaladeiturchi.com
+                  </p>
+                </a>
+                <a
+                  href="https://maps.google.com/?q=Stada provinciale 68 92010 Realmonte (AG)"
+                  class="contact-container"
+                  target="_blank"
+                  id="contact-container4"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/location-icon.png"
+                    alt="icon"
+                    class="phone-icon"
+                    id="icon4"
+                  />
+                  <p class="icon-tag" id="icon-tag-4">
+                    Stada provinciale 68 92010 Realmonte (AG)
+                  </p>
+                </a>
+                <a
+                  href="https://www.lbscaladeiturchi.com/"
+                  target="_blank"
+                  class="contact-container"
+                  id="contact-container5"
+                >
+                  <img
+                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/web-icon.png"
+                    alt="icon"
+                    class="phone-icon"
+                    id="icon5"
+                  />
+                  <p class="icon-tag" id="icon-tag-5">
+                    www.lbscaladeiturchi.com
+                  </p>
                 </a>
               </div>
+              <a href="#!" class="tc2">
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/btn.png"
+                  alt="icon"
+                  id="primary-btn"
+                />
+              </a>
             </div>
           </div>
-          <div class="swiper-slide" id="f2" style="position: relative">
+        </div>
+        <div class="swiper-slide" id="f2" style="position: relative">
+          <div
+            class="second"
+            id="second"
+            style="width: 100%; height: 100%"
+            data-swiper-parallax="-100"
+          >
+            <div class="second-image transitionfix" id="second-img">
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/second.png"
+                alt="img"
+                class="second-img"
+              />
+            </div>
+
+            <div id="white-bar"></div>
+
             <div
-              class="second"
-              id="second"
-              style="width: 100%; height: 100%"
               data-swiper-parallax="-100"
+              style="position: absolute; left: 6%; width: 85%; bottom: 38%"
             >
-              <div class="second-image transitionfix" id="second-img">
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/second.png"
-                  alt="img"
-                  class="second-img"
-                />
-              </div>
-
-              <div id="white-bar"></div>
-
+              <p id="quote">
+                the Lounge Beach Scala dei Turchi is a location that perfectly
+                integrates with the surrounding paradise, the sea, the sun and
+                the famous seaside resort of Agrigento.
+              </p>
+            </div>
+            <img
+              src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png"
+              alt="logo-img"
+              class="white-circle"
+              id="white-circle"
+              data-swiper-parallax="-100"
+            />
+            <img
+              src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/second-btn.png"
+              alt="logo-img"
+              class="white-btn"
+              id="white-btn"
+              data-swiper-parallax="-200"
+            />
+            <img
+              src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-logo.png"
+              alt="logo-img"
+              class="white"
+              id="white"
+              data-swiper-parallax="-100"
+            />
+            <img
+              src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-left.png"
+              alt="logo-img"
+              class="rect"
+              id="rect-left"
+              data-swiper-parallax="-100"
+            />
+            <img
+              src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-right.png"
+              alt="logo-img"
+              class="rect-right"
+              id="rect-right"
+              data-swiper-parallax="-100"
+            />
+            <div id="leftarrow2" class="next-two prev">
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
+                alt="leftarrow"
+                id="leftarrowimg2"
+              />
+            </div>
+            <div id="leftarrow2-top" class="next-two next">
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png"
+                alt="leftarrow"
+                id="leftarrowimg2-top"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide" id="f3">
+          <div class="third" id="third">
+            <div class="third-container">
               <div
-                data-swiper-parallax="-100"
-                style="position: absolute; left: 6%; width: 85%; bottom: 38%"
-              >
-                <p id="quote">
-                  the Lounge Beach Scala dei Turchi is a location that perfectly
-                  integrates with the surrounding paradise, the sea, the sun and
-                  the famous seaside resort of Agrigento.
-                </p>
-              </div>
-              <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png"
-                alt="logo-img"
-                class="white-circle"
-                id="white-circle"
-                data-swiper-parallax="-100"
-              />
-              <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/second-btn.png"
-                alt="logo-img"
-                class="white-btn"
-                id="white-btn"
-                data-swiper-parallax="-200"
-              />
-              <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-logo.png"
-                alt="logo-img"
-                class="white"
-                id="white"
-                data-swiper-parallax="-100"
-              />
-              <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-left.png"
-                alt="logo-img"
-                class="rect"
-                id="rect-left"
-                data-swiper-parallax="-100"
-              />
-              <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/rectangle-right.png"
-                alt="logo-img"
-                class="rect-right"
-                id="rect-right"
-                data-swiper-parallax="-100"
-              />
-              <div id="leftarrow2" class="next-two prev">
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
-                  alt="leftarrow"
-                  id="leftarrowimg2"
-                />
-              </div>
-              <div id="leftarrow2-top" class="next-two next">
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png"
-                  alt="leftarrow"
-                  id="leftarrowimg2-top"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide" id="f3">
-            <div class="third" id="third">
-              <div class="third-container">
-                <div
-                  id="third-img-1"
-                  class="transitionfix"
-                  data-swiper-parallax="-200"
-                >
-                  <img
-                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/third-img-01.png"
-                    alt="img1"
-                    class="third-img-01"
-                  />
-                </div>
-                <div id="third-contx" data-swiper-parallax="-300">
-                  <h1 id="third-txt">From the sea to the table</h1>
-                </div>
-                <div
-                  id="third-img-2"
-                  class="transitionfix"
-                  data-swiper-parallax="-200"
-                >
-                  <img
-                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/third-img-02.png"
-                    alt="img1"
-                    class="third-img-02"
-                  />
-                </div>
-              </div>
-              <div id="leftarrow3" class="next-two next">
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png"
-                  alt="leftarrow"
-                  id="leftarrowimg3"
-                />
-              </div>
-              <div id="leftarrow3-top" class="next-two prev">
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
-                  alt="leftarrow"
-                  id="leftarrowimg3-top"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide" id="f4">
-            <div class="fourth" id="fourth">
-              <div class="fourth-container">
-                <div
-                  id="fourth-img-1"
-                  class="transitionfix"
-                  data-swiper-parallax="-200"
-                >
-                  <img
-                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fourth-img-01.png"
-                    alt="img1"
-                    class="fourth-img-01"
-                  />
-                </div>
-                <div id="fourth-contx" data-swiper-parallax="-300">
-                  <h1 id="fourth-txt">
-                    Carefully sourced and selected champagnes, wines AND
-                    tailored drinks
-                  </h1>
-                </div>
-                <div
-                  id="fourth-img-2"
-                  class="transitionfix"
-                  data-swiper-parallax="-200"
-                >
-                  <img
-                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fourth-img-02.png"
-                    alt="img2"
-                    class="fourth-img-02"
-                  />
-                </div>
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png"
-                  alt="logo-img"
-                  class="white-circle2"
-                  id="white-circle2"
-                />
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/longline.png"
-                  alt="longline"
-                  id="longline"
-                />
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/longline.png"
-                  alt="longline"
-                  id="longline-down"
-                />
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png"
-                  alt="logo-img"
-                  class="white-circle3"
-                  id="white-circle3"
-                />
-              </div>
-              <div id="leftarrow4" class="next-two prev">
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
-                  alt="leftarrow"
-                  id="leftarrowimg4"
-                />
-              </div>
-              <div id="leftarrow4-top" class="next-two next">
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png"
-                  alt="leftarrow"
-                  id="leftarrowimg4-top"
-                />
-              </div>
-            </div>
-          </div>
-          <div class="swiper-slide" id="f5">
-            <div class="fifth" id="fifth">
-              <div
-                id="fifth-img-1"
+                id="third-img-1"
                 class="transitionfix"
                 data-swiper-parallax="-200"
               >
                 <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-round.png"
-                  alt="img2"
-                  class="fifth-img-01"
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/third-img-01.png"
+                  alt="img1"
+                  class="third-img-01"
                 />
+              </div>
+              <div id="third-contx" data-swiper-parallax="-300">
+                <h1 id="third-txt">From the sea to the table</h1>
               </div>
               <div
-                id="fifth-img-2"
+                id="third-img-2"
                 class="transitionfix"
-                data-swiper-parallax="-400"
+                data-swiper-parallax="-200"
               >
                 <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-second.png"
-                  alt="img2"
-                  class="fifth-img-02"
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/third-img-02.png"
+                  alt="img1"
+                  class="third-img-02"
                 />
               </div>
-
+            </div>
+            <div id="leftarrow3" class="next-two next">
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png"
+                alt="leftarrow"
+                id="leftarrowimg3"
+              />
+            </div>
+            <div id="leftarrow3-top" class="next-two prev">
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
+                alt="leftarrow"
+                id="leftarrowimg3-top"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide" id="f4">
+          <div class="fourth" id="fourth">
+            <div class="fourth-container">
+              <div
+                id="fourth-img-1"
+                class="transitionfix"
+                data-swiper-parallax="-200"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fourth-img-01.png"
+                  alt="img1"
+                  class="fourth-img-01"
+                />
+              </div>
+              <div id="fourth-contx" data-swiper-parallax="-300">
+                <h1 id="fourth-txt">
+                  Carefully sourced and selected champagnes, wines AND tailored
+                  drinks
+                </h1>
+              </div>
+              <div
+                id="fourth-img-2"
+                class="transitionfix"
+                data-swiper-parallax="-200"
+              >
+                <img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fourth-img-02.png"
+                  alt="img2"
+                  class="fourth-img-02"
+                />
+              </div>
               <img
                 src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png"
                 alt="logo-img"
-                class="white-circle-fifth"
-                id="white-circle-fifth"
-                data-swiper-parallax="-250"
+                class="white-circle2"
+                id="white-circle2"
               />
               <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-btn.png"
-                alt="logo-img"
-                class="white-btn-fifth"
-                id="white-btn-fifth"
-                data-swiper-parallax="-250"
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/longline.png"
+                alt="longline"
+                id="longline"
               />
-              <div id="leftarrow5" class="next-two prev">
-                <img
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
-                  alt="leftarrow"
-                  id="leftarrowimg5"
-                />
-              </div>
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/longline.png"
+                alt="longline"
+                id="longline-down"
+              />
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png"
+                alt="logo-img"
+                class="white-circle3"
+                id="white-circle3"
+              />
+            </div>
+            <div id="leftarrow4" class="next-two prev">
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
+                alt="leftarrow"
+                id="leftarrowimg4"
+              />
+            </div>
+            <div id="leftarrow4-top" class="next-two next">
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png"
+                alt="leftarrow"
+                id="leftarrowimg4-top"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide" id="f5">
+          <div class="fifth" id="fifth">
+            <div
+              id="fifth-img-1"
+              class="transitionfix"
+              data-swiper-parallax="-200"
+            >
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-round.png"
+                alt="img2"
+                class="fifth-img-01"
+              />
+            </div>
+            <div
+              id="fifth-img-2"
+              class="transitionfix"
+              data-swiper-parallax="-400"
+            >
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-second.png"
+                alt="img2"
+                class="fifth-img-02"
+              />
+            </div>
+
+            <img
+              src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png"
+              alt="logo-img"
+              class="white-circle-fifth"
+              id="white-circle-fifth"
+              data-swiper-parallax="-250"
+            />
+            <img
+              src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fifth-btn.png"
+              alt="logo-img"
+              class="white-btn-fifth"
+              id="white-btn-fifth"
+              data-swiper-parallax="-250"
+            />
+            <div id="leftarrow5" class="next-two prev">
+              <img
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
+                alt="leftarrow"
+                id="leftarrowimg5"
+              />
             </div>
           </div>
         </div>
@@ -940,9 +1349,7 @@
     </div>
     <!-- Swiper JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".swiper-container", {
@@ -1037,12 +1444,6 @@
           10.145,
           5.5
         );
-
-        document.getElementById("f1").style.height = getSize(200, 100);
-        document.getElementById("f2").style.height = getSize(200, 100);
-        document.getElementById("f3").style.height = getSize(200, 100);
-        document.getElementById("f4").style.height = getSize(200, 100);
-        document.getElementById("f5").style.height = getSize(200, 100);
 
         document.getElementById("logo").style.width = getSize(35.266, 16);
         document.getElementById("logo").style.height = getSize(25.6, 12.3);
@@ -1367,6 +1768,11 @@
           55,
           25
         );
+        document.getElementById("f1").style.height = getSize(200, 100);
+        document.getElementById("f2").style.height = getSize(200, 100);
+        document.getElementById("f3").style.height = getSize(200, 100);
+        document.getElementById("f4").style.height = getSize(200, 100);
+        document.getElementById("f5").style.height = getSize(200, 100);
       }
 
       function openSlide() {
