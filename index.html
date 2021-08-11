@@ -45,12 +45,28 @@
       }
       html,
       body {
+        position: relative;
         height: 100%;
         background: black;
-        overflow: hidden;
       }
+
       body {
         margin: 0;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      p {
+        word-break: word-break;
+      }
+
+      .one,
+      .second,
+      .third,
+      .fourth,
+      .fifth {
+        overflow: hidden;
       }
 
       a,
@@ -921,18 +937,16 @@
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper(".swiper-container", {
+        speed: 600,
+        parallax: true,
         effect: "cube",
-        observer: true,
-        observeParents: true,
         grabCursor: true,
         cubeEffect: {
           shadow: false,
-          slideShadows: true,
+          slideShadows: false,
           shadowOffset: 20,
           shadowScale: 0.94,
         },
-        speed: 800,
-        parallax: true,
         navigation: {
           nextEl: ".next",
           prevEl: ".prev",
