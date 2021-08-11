@@ -67,6 +67,8 @@
       .fourth,
       .fifth {
         overflow: hidden;
+        width: 100%;
+        height: 100%;
       }
 
       a,
@@ -214,8 +216,7 @@
         background-size: cover;
         background-position: center;
         box-sizing: border-box;
-        width: 100vw !important;
-        height: 100% !important;
+
         background: white;
 
         color: white;
@@ -429,6 +430,14 @@
           opacity: 0;
           right: 9%;
         }
+      }
+      #f1,
+      #f1,
+      #f3,
+      #f4,
+      #f5 {
+        overflow: hidden;
+        width: 100vw;
       }
     </style>
   </head>
@@ -1028,6 +1037,12 @@
           10.145,
           5.5
         );
+
+        document.getElementById("f1").style.height = getSize(200, 100);
+        document.getElementById("f2").style.height = getSize(200, 100);
+        document.getElementById("f3").style.height = getSize(200, 100);
+        document.getElementById("f4").style.height = getSize(200, 100);
+        document.getElementById("f5").style.height = getSize(200, 100);
 
         document.getElementById("logo").style.width = getSize(35.266, 16);
         document.getElementById("logo").style.height = getSize(25.6, 12.3);
