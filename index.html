@@ -291,8 +291,6 @@
       #white-bar,
       #longline,
       #primary-btn,
-      #social2,
-      #social1,
       #sharebtn,
       #lottie,
       #white-circle3,
@@ -310,6 +308,11 @@
         z-index: 2;
         -webkit-transform: translate3d(0, 0, 1px);
         transform: translate3d(0, 0, 1px);
+      }
+      #social2,
+      #social1,
+      #sharebtn {
+        z-index: 999;
       }
 
       .transl {
@@ -365,6 +368,7 @@
         position: absolute;
         top: 2%;
         left: 2%;
+        z-index: 888;
       }
       #sharebtn {
         position: absolute;
@@ -853,6 +857,9 @@
           right: 9%;
         }
       }
+      #arrow-anim1 {
+        z-index: 999;
+      }
 
       #f1,
       #f2,
@@ -969,59 +976,6 @@
         <div class="swiper-slide" id="f1">
           <div class="one-wrapper" data-swiper-parallax="-200">
             <div class="one" id="one">
-              <div class="arrow arrow-first next tc1"></div>
-              <div class="arrow arrow-second next tc1"></div>
-              <audio id="audio">
-                <source
-                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/WhatsApp Audio 2021-08-09 at 1.38.11 PM.mpeg"
-                  type="audio/mpeg"
-                />
-              </audio>
-              <div id="social-wrapper" class="tc2">
-                <a
-                  href="https://www.facebook.com/LoungeBeachScaladeiTurchi/"
-                  target="_blank"
-                  id="social1"
-                  ><img
-                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fb.png"
-                    alt="social"
-                    id="social1-img"
-                /></a>
-                <a
-                  href="https://www.instagram.com/lounge_beach_scala_dei_turchi/?utm_medium=copy_link"
-                  target="_blank"
-                  id="social2"
-                  ><img
-                    src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/insta.png"
-                    alt="social"
-                    id="social2-img"
-                /></a>
-              </div>
-              <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/share-btn.png"
-                id="sharebtn"
-                alt="social"
-                class="tc2"
-                onclick="openSlide()"
-              />
-              <lottie-player
-                src="https://raw.githubusercontent.com/rohit-virkud/template02-light/main/hj.json"
-                background="transparent"
-                speed="1"
-                class="lottie-anim tc1"
-                id="lottie"
-                onclick="play2()"
-                loop
-                autoplay
-                style="
-                  cursor: pointer;
-                  z-index: 999;
-                  stroke: black;
-                  bottom: 2%;
-                  left: 5%;
-                "
-              ></lottie-player>
-
               <img
                 src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/logo.png"
                 id="logo"
@@ -1114,6 +1068,58 @@
                 />
               </a>
             </div>
+            <div class="arrow arrow-first next tc1" id="arrow-anim1"></div>
+            <div class="arrow arrow-second next tc1" id="arrow-anim2"></div>
+            <audio id="audio">
+              <source
+                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/WhatsApp Audio 2021-08-09 at 1.38.11 PM.mpeg"
+                type="audio/mpeg"
+              />
+            </audio>
+            <div id="social-wrapper" class="tc2">
+              <a
+                href="https://www.facebook.com/LoungeBeachScaladeiTurchi/"
+                target="_blank"
+                id="social1"
+                ><img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/fb.png"
+                  alt="social"
+                  id="social1-img"
+              /></a>
+              <a
+                href="https://www.instagram.com/lounge_beach_scala_dei_turchi/?utm_medium=copy_link"
+                target="_blank"
+                id="social2"
+                ><img
+                  src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/insta.png"
+                  alt="social"
+                  id="social2-img"
+              /></a>
+            </div>
+            <img
+              src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/share-btn.png"
+              id="sharebtn"
+              alt="social"
+              class="tc2"
+              onclick="openSlide()"
+            />
+            <lottie-player
+              src="https://raw.githubusercontent.com/rohit-virkud/template02-light/main/hj.json"
+              background="transparent"
+              speed="1"
+              class="lottie-anim tc1"
+              id="lottie"
+              onclick="play2()"
+              loop
+              autoplay
+              style="
+                cursor: pointer;
+                z-index: 999;
+                stroke: black;
+                bottom: 2%;
+                left: 5%;
+              "
+            ></lottie-player>
           </div>
         </div>
         <div class="swiper-slide" id="f2" style="position: relative">
