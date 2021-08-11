@@ -46,37 +46,17 @@
         font-family: "Montserrat", sans-serif;
         font-family: "Roboto", sans-serif;
       }
-      html,body
-	{
-		position: relative;
-		height: 100%;
-		background: black;	
-	}
-	body{
-		margin: 0;
-	}
-	.swiper-container
-	{
-		width: 100%;
-		height: 100vh;
-		position: absolute;
-		left: 50%;
-		margin-left: -50%;
+      html,
+      body {
+        position: relative;
+        height: 100%;
+        background: black;
+        overflow: hidden;
+      }
+      body {
+        margin: 0;
+      }
 
-	}
-	.swiper-slide
-	{
-		background-size:cover;
-		background-position: center;
-		box-sizing: border-box;
-		padding: 5em 2em;
-		color: white;
-		font-family: 'Roboto', sans-serif;
-	}
-	img{
-		width:100%;
-	}
-    
       a,
       a:hover,
       a:focus,
@@ -84,7 +64,9 @@
         text-decoration: none;
         color: inherit;
       }
-     
+      img {
+        width: 100%;
+      }
 
       /*Loader*/
       .loader-div {
@@ -208,12 +190,24 @@
         }
       }
       /*end loader*/
-      
 
+      .swiper-container {
+        width: 100%;
+        height: 100vh;
+        position: absolute;
+        left: 50%;
+        margin-left: -50%;
+      }
       .swiper-slide {
-        background: #fff;
-        width: 100% !important;
-        height: 100% !important;
+        background-size: cover;
+        background-position: center;
+        box-sizing: border-box;
+        padding: 5em 2em;
+        color: white;
+        font-family: "Roboto", sans-serif;
+      }
+      img {
+        width: 100%;
       }
 
       /*share slide*/
