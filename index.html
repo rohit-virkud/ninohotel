@@ -869,6 +869,9 @@
         overflow: hidden;
         width: 100vw;
       }
+      #sw {
+        width: 100vw;
+      }
     </style>
   </head>
   <body onload="sizes()">
@@ -972,7 +975,7 @@
 
     <!-- Swiper -->
     <div class="swiper-container" id="sc">
-      <div class="swiper-wrapper">
+      <div class="swiper-wrapper" id="sw">
         <div class="swiper-slide" id="f1">
           <div class="one-wrapper" data-swiper-parallax="-200">
             <div class="one" id="one">
@@ -1794,6 +1797,8 @@
         document.getElementById("f3").style.height = getSize(200, 100);
         document.getElementById("f4").style.height = getSize(200, 100);
         document.getElementById("f5").style.height = getSize(200, 100);
+
+        document.getElementById("sw").style.height = getSize(200, 100);
       }
 
       function openSlide() {
