@@ -29,10 +29,6 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.css"
-    />
 
     <style type="text/css">
       * {
@@ -330,8 +326,7 @@
         text-align: center;
       }
       #divider {
-        background: url("https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/gold-textured-background.png")
-          no-repeat;
+        background: url("gold-textured-background.png") no-repeat;
       }
       .contact-container {
         display: -webkit-box;
@@ -355,18 +350,18 @@
         height: auto;
       }
       #social-wrapper {
-        position: absolute;
+        position: fixed;
         top: 2%;
         left: 2%;
         z-index: 888;
       }
       #sharebtn {
-        position: absolute;
+        position: fixed;
         top: 2.5%;
         right: 4%;
       }
       #leftarrow {
-        position: absolute;
+        position: fixed;
         bottom: 3%;
         right: 8%;
       }
@@ -389,7 +384,7 @@
         overflow: hidden;
       }
       #white-bar {
-        position: absolute;
+        position: fixed;
         width: 95%;
         background: white;
         top: 65%;
@@ -407,39 +402,39 @@
         transform: translate3d(0px, 0px, 0px) rotate(270deg) !important;
       }
       .white {
-        position: absolute;
+        position: fixed;
         height: auto;
         bottom: 5%;
       }
       .white-btn {
-        position: absolute;
+        position: fixed;
         height: auto;
         bottom: 18%;
       }
       .white-circle {
-        position: absolute;
+        position: fixed;
         height: auto;
         bottom: 28%;
       }
       .rect {
-        position: absolute;
+        position: fixed;
         height: 6%;
         left: 6%;
         bottom: 18%;
       }
       .rect-right {
-        position: absolute;
+        position: fixed;
         height: 6%;
         right: 6%;
         bottom: 18%;
       }
       #leftarrow2 {
-        position: absolute;
+        position: fixed;
         bottom: 3.5%;
         left: 5%;
       }
       #leftarrow2-top {
-        position: absolute;
+        position: fixed;
         top: 3.5%;
         right: 5%;
       }
@@ -511,27 +506,27 @@
         width: 70%;
       }
       #leftarrow3 {
-        position: absolute;
+        position: fixed;
         top: 4%;
         right: 5%;
       }
       #leftarrow3-top {
-        position: absolute;
+        position: fixed;
         bottom: 3.5%;
         left: 5%;
       }
       #leftarrow4 {
-        position: absolute;
+        position: fixed;
         top: 3.5%;
         left: 5%;
       }
       #leftarrow4-top {
-        position: absolute;
+        position: fixed;
         bottom: 3.5%;
         right: 5%;
       }
       #longline {
-        position: absolute;
+        position: fixed;
         width: 0.4%;
         height: 32%;
         top: 10%;
@@ -541,7 +536,7 @@
         transform: rotate(0deg);
       }
       #longline-down {
-        position: absolute;
+        position: fixed;
         width: 0.4%;
         height: 32%;
         bottom: 10%;
@@ -551,13 +546,13 @@
         transform: rotate(0deg);
       }
       .white-circle2 {
-        position: absolute;
+        position: fixed;
         height: auto;
         top: 6%;
         right: 5%;
       }
       .white-circle3 {
-        position: absolute;
+        position: fixed;
         height: auto;
         bottom: 6%;
         left: 5%;
@@ -583,34 +578,34 @@
       #fifth-img-1 {
         overflow: hidden;
         border-radius: 50%;
-        position: absolute;
+        position: fixed;
         top: 2%;
       }
       #fifth-img-2 {
         overflow: hidden;
         border-top-left-radius: 50%;
         border-top-right-radius: 50%;
-        position: absolute;
+        position: fixed;
         bottom: 0;
       }
       .white-circle-fifth {
-        position: absolute;
+        position: fixed;
         height: auto;
 
         top: 42%;
       }
       .white-btn-fifth {
-        position: absolute;
+        position: fixed;
         height: auto;
         top: 33%;
       }
       #leftarrow5 {
-        position: absolute;
+        position: fixed;
         top: 3.5%;
         left: 5%;
       }
       #leftarrow5-top {
-        position: absolute;
+        position: fixed;
         top: 3.5%;
         right: 5%;
       }
@@ -670,7 +665,7 @@
         transition: transform 1s ease-out, -webkit-transform 1s ease-out;
       }
       .share-slide .close-icon {
-        position: absolute;
+        position: fixed;
         top: 4%;
         right: 7%;
       }
@@ -792,12 +787,12 @@
         transform: rotateZ(180deg);
       }
       .lottie-anim {
-        position: absolute;
+        position: fixed;
         bottom: 1.5%;
       }
       .arrow {
         opacity: 0;
-        position: absolute;
+        position: fixed;
         right: 5%;
         bottom: 3%;
         transform-origin: 50% 50%;
@@ -819,7 +814,7 @@
         content: "";
         display: block;
         height: 0.4vw;
-        position: absolute;
+        position: fixed;
         top: 0;
         right: 0;
         width: 4vw;
@@ -1359,26 +1354,24 @@
 
     <!-- Swiper JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
-      /*swiper*/
       var swiper = new Swiper(".swiper-container", {
-        effect: "coverflow",
-
-        grabCursor: true,
-        centeredSlides: true,
-        slidesPerView: "auto",
+        speed: 800,
         parallax: true,
-        speed: 900,
-        coverflow: {
-          rotate: -100,
-          stretch: 100,
-          depth: 500,
-          modifier: 1,
-          slideShadows: true,
+        effect: "cube",
+        grabCursor: true,
+        cubeEffect: {
+          shadow: false,
+          slideShadows: false,
+          shadowOffset: 20,
+          shadowScale: 0.94,
         },
-        navigation: { nextEl: ".next", prevEl: ".prev" },
+        navigation: {
+          nextEl: ".next",
+          prevEl: ".prev",
+        },
       });
 
       setTimeout(function () {
