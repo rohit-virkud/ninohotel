@@ -29,6 +29,10 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.css"
+    />
 
     <style type="text/css">
       * {
@@ -207,10 +211,6 @@
         min-height: 100%;
       }
 
-      .swiper-container-3d {
-        perspective: none !important;
-      }
-
       .swiper-slide {
         background: #fff;
       }
@@ -330,7 +330,8 @@
         text-align: center;
       }
       #divider {
-        background: url("gold-textured-background.png") no-repeat;
+        background: url("https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/gold-textured-background.png")
+          no-repeat;
       }
       .contact-container {
         display: -webkit-box;
@@ -1358,24 +1359,26 @@
 
     <!-- Swiper JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
+      /*swiper*/
       var swiper = new Swiper(".swiper-container", {
-        speed: 800,
-        parallax: true,
-        effect: "cube",
+        effect: "coverflow",
+
         grabCursor: true,
-        cubeEffect: {
-          shadow: false,
-          slideShadows: false,
-          shadowOffset: 20,
-          shadowScale: 0.94,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        parallax: true,
+        speed: 900,
+        coverflow: {
+          rotate: -100,
+          stretch: 50,
+          depth: 500,
+          modifier: 1,
+          slideShadows: true,
         },
-        navigation: {
-          nextEl: ".next",
-          prevEl: ".prev",
-        },
+        navigation: { nextEl: ".next", prevEl: ".prev" },
       });
 
       setTimeout(function () {
