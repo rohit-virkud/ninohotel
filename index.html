@@ -47,11 +47,9 @@
       body {
         position: relative;
         height: 100%;
+        width: 100%;
       }
 
-      body {
-        margin: 0;
-      }
       a {
         color: inherit;
         text-decoration: none;
@@ -200,6 +198,12 @@
         top: 0px;
         left: 0px;
         color: white;
+      }
+
+      .swiper-wrapper
+      {
+        min-width: 100%;
+        min-height: 100%;
       }
 
       .swiper-slide {
@@ -951,8 +955,8 @@
     </div>
 
     <!-- Swiper -->
-    <div class="swiper-container" id="sc">
-      <div class="swiper-wrapper" id="sw">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
         <div class="swiper-slide" id="f1">
           <div class="one-wrapper" data-swiper-parallax="-200">
             <div class="one" id="one">
