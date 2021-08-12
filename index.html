@@ -393,7 +393,6 @@
         width: 95%;
         background: white;
         top: 65%;
-        
       }
       #quote {
         font-family: Bellefair;
@@ -801,7 +800,6 @@
         right: 5%;
         bottom: 3%;
         transform-origin: 50% 50%;
-
         transform: translate3d(-50%, -50%, 0);
         transform: rotate(90deg);
       }
@@ -847,6 +845,110 @@
           right: 9%;
         }
       }
+
+      .arrow2 {
+        opacity: 0;
+        position: absolute;
+        bottom: 3%;
+        transform-origin: 50% 50%;
+        transform: translate3d(-50%, -50%, 0);
+        transform: rotate(90deg);
+      }
+
+      .arrow-first2 {
+        animation: arrow-movement2 2s ease-in-out infinite;
+      }
+      .arrow-second2 {
+        animation: arrow-movement2 2s 1s ease-in-out infinite;
+      }
+
+      .arrow2:before,
+      .arrow2:after {
+        background: black;
+        content: "";
+        display: block;
+        height: 0.4vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 4vw;
+      }
+
+      .arrow2:before {
+        transform: rotate(45deg) translateX(-20%);
+        transform-origin: top left;
+      }
+
+      .arrow2:after {
+        transform: rotate(-45deg) translateX(20%);
+        transform-origin: top right;
+      }
+
+      @keyframes arrow-movement2 {
+        0% {
+          opacity: 0;
+        }
+        70% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          left: 9%;
+        }
+      }
+
+      .arrow3 {
+        opacity: 0;
+        position: absolute;
+        top: 4%;
+        right: 5%;
+        transform-origin: 50% 50%;
+        transform: translate3d(-50%, -50%, 0);
+        transform: rotate(270deg);
+      }
+
+      .arrow-first3 {
+        animation: arrow-movement3 2s ease-in-out infinite;
+      }
+      .arrow-second3 {
+        animation: arrow-movement3 2s 1s ease-in-out infinite;
+      }
+
+      .arrow3:before,
+      .arrow3:after {
+        background: black;
+        content: "";
+        display: block;
+        height: 0.4vw;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 4vw;
+      }
+
+      .arrow3:before {
+        transform: rotate(45deg) translateX(-20%);
+        transform-origin: top left;
+      }
+
+      .arrow3:after {
+        transform: rotate(-45deg) translateX(20%);
+        transform-origin: top right;
+      }
+
+      @keyframes arrow-movement3 {
+        0% {
+          opacity: 0;
+        }
+        70% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+          right: 9%;
+        }
+      }
+
       #arrow-anim1 {
         z-index: 999;
       }
@@ -1113,6 +1215,30 @@
           ></lottie-player>
         </div>
         <div class="swiper-slide" id="f2" style="position: relative">
+          <!-- Top arrow -->
+          <div
+            class="arrow3 arrow-first3 next tc1"
+            id="arrow-anim1"
+            style="bottom: auto"
+          ></div>
+          <div
+            class="arrow3 arrow-second3 next tc1"
+            id="arrow-anim2"
+            style="bottom: auto"
+          ></div>
+
+          <!-- down arrow -->
+          <div
+            class="arrow2 arrow-first2 next tc1"
+            id="arrow-anim1"
+            style="left: 5%; right: auto"
+          ></div>
+          <div
+            class="arrow2 arrow-second2 next tc1"
+            id="arrow-anim2"
+            style="left: 5%; right: auto"
+          ></div>
+
           <div
             class="second"
             id="second"
@@ -1140,6 +1266,7 @@
                 the famous seaside resort of Agrigento.
               </p>
             </div>
+
             <img
               src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/white-circle.png"
               alt="logo-img"
@@ -1175,23 +1302,32 @@
               id="rect-right"
               data-swiper-parallax="-100"
             />
-            <div id="leftarrow2" class="next-two prev">
-              <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
-                alt="leftarrow"
-                id="leftarrowimg2"
-              />
-            </div>
-            <div id="leftarrow2-top" class="next-two next">
-              <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png"
-                alt="leftarrow"
-                id="leftarrowimg2-top"
-              />
-            </div>
           </div>
         </div>
         <div class="swiper-slide" id="f3">
+          <!-- Top arrow -->
+          <div
+            class="arrow3 arrow-first3 next tc1"
+            id="arrow-anim1"
+            style="bottom: auto"
+          ></div>
+          <div
+            class="arrow3 arrow-second3 next tc1"
+            id="arrow-anim2"
+            style="bottom: auto"
+          ></div>
+
+          <!-- down arrow -->
+          <div
+            class="arrow2 arrow-first2 next tc1"
+            id="arrow-anim1"
+            style="left: 5%; right: auto"
+          ></div>
+          <div
+            class="arrow2 arrow-second2 next tc1"
+            id="arrow-anim2"
+            style="left: 5%; right: auto"
+          ></div>
           <div class="third" id="third">
             <div class="third-container">
               <div
@@ -1220,20 +1356,7 @@
                 />
               </div>
             </div>
-            <div id="leftarrow3" class="next-two next">
-              <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png"
-                alt="leftarrow"
-                id="leftarrowimg3"
-              />
-            </div>
-            <div id="leftarrow3-top" class="next-two prev">
-              <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
-                alt="leftarrow"
-                id="leftarrowimg3-top"
-              />
-            </div>
+            <!-- arrows here  --->
           </div>
         </div>
         <div class="swiper-slide" id="f4">
@@ -1290,20 +1413,29 @@
                 id="white-circle3"
               />
             </div>
-            <div id="leftarrow4" class="next-two prev">
-              <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
-                alt="leftarrow"
-                id="leftarrowimg4"
-              />
-            </div>
-            <div id="leftarrow4-top" class="next-two next">
-              <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/right-arrow.png"
-                alt="leftarrow"
-                id="leftarrowimg4-top"
-              />
-            </div>
+            <!-- Top arrow -->
+            <div
+              class="arrow3 arrow-first3 next tc1"
+              id="arrow-anim1"
+              style="top: auto; bottom: 5%"
+            ></div>
+            <div
+              class="arrow3 arrow-second3 next tc1"
+              id="arrow-anim2"
+              style="top: auto; bottom: 5%"
+            ></div>
+
+            <!-- down arrow -->
+            <div
+              class="arrow2 arrow-first2 next tc1"
+              id="arrow-anim1"
+              style="left: 5%; right: auto; top: 5%; bottom: auto"
+            ></div>
+            <div
+              class="arrow2 arrow-second2 next tc1"
+              id="arrow-anim2"
+              style="left: 5%; right: auto; top: 5%; bottom: auto"
+            ></div>
           </div>
         </div>
         <div class="swiper-slide" id="f5">
@@ -1345,13 +1477,18 @@
               id="white-btn-fifth"
               data-swiper-parallax="-250"
             />
-            <div id="leftarrow5" class="next-two prev">
-              <img
-                src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/left-arrow.png"
-                alt="leftarrow"
-                id="leftarrowimg5"
-              />
-            </div>
+
+            <!-- down arrow -->
+            <div
+              class="arrow2 arrow-first2 next tc1"
+              id="arrow-anim1"
+              style="left: 5%; right: auto; top: 5%; bottom: auto"
+            ></div>
+            <div
+              class="arrow2 arrow-second2 next tc1"
+              id="arrow-anim2"
+              style="left: 5%; right: auto; top: 5%; bottom: auto"
+            ></div>
           </div>
         </div>
       </div>
@@ -1546,124 +1683,6 @@
 
         document.getElementById("sharebtn").style.width = getSize(10, 5);
         document.getElementById("sharebtn").style.height = getSize(10, 5);
-
-        document.getElementById("leftarrow2").style.width = getSize(2.415, 1.8);
-        document.getElementById("leftarrow2").style.height = getSize(
-          4.348,
-          2.5
-        );
-
-        document.getElementById("leftarrow2-top").style.width = getSize(
-          2.415,
-          1.8
-        );
-        document.getElementById("leftarrow2-top").style.height = getSize(
-          4.348,
-          2.5
-        );
-
-        document.getElementById("leftarrow3").style.width = getSize(2.415, 1.8);
-        document.getElementById("leftarrow3").style.height = getSize(
-          4.348,
-          2.5
-        );
-
-        document.getElementById("leftarrow3-top").style.width = getSize(
-          2.415,
-          1.8
-        );
-        document.getElementById("leftarrow3-top").style.height = getSize(
-          4.348,
-          2.5
-        );
-
-        document.getElementById("leftarrow4").style.width = getSize(2.415, 1.8);
-        document.getElementById("leftarrow4").style.height = getSize(
-          4.348,
-          2.5
-        );
-
-        document.getElementById("leftarrow4-top").style.width = getSize(
-          2.415,
-          1.8
-        );
-        document.getElementById("leftarrow4-top").style.height = getSize(
-          4.348,
-          2.5
-        );
-
-        document.getElementById("leftarrow5").style.width = getSize(2.415, 1.8);
-        document.getElementById("leftarrow5").style.height = getSize(
-          4.348,
-          2.5
-        );
-
-        document.getElementById("leftarrowimg2").style.width = getSize(
-          2.415,
-          1.8
-        );
-        document.getElementById("leftarrowimg2-top").style.width = getSize(
-          2.415,
-          1.8
-        );
-
-        document.getElementById("leftarrowimg2").style.height = getSize(
-          4.348,
-          2.5
-        );
-
-        document.getElementById("leftarrowimg3").style.width = getSize(
-          2.415,
-          1.8
-        );
-
-        document.getElementById("leftarrowimg3").style.height = getSize(
-          4.348,
-          2.5
-        );
-
-        document.getElementById("leftarrowimg3-top").style.width = getSize(
-          2.415,
-          1.8
-        );
-        document.getElementById("leftarrowimg3-top").style.height = getSize(
-          4.348,
-          2.5
-        );
-
-        document.getElementById("leftarrowimg4").style.width = getSize(
-          2.415,
-          1.8
-        );
-
-        document.getElementById("leftarrowimg4").style.height = getSize(
-          4.348,
-          2.5
-        );
-
-        document.getElementById("leftarrowimg4-top").style.width = getSize(
-          2.415,
-          1.8
-        );
-        document.getElementById("leftarrowimg4-top").style.height = getSize(
-          4.348,
-          2.5
-        );
-
-        document.getElementById("leftarrowimg5").style.width = getSize(
-          2.415,
-          1.8
-        );
-
-        document.getElementById("leftarrowimg5").style.height = getSize(
-          4.348,
-          2.5
-        );
-
-        document.getElementById("leftarrowimg2-top").style.height = getSize(
-          4.348,
-          2.5
-        );
 
         document.getElementById("second-img").style.borderBottomLeftRadius =
           getSize(30, 18.5);
