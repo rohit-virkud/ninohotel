@@ -29,6 +29,10 @@
       rel="stylesheet"
       href="https://unpkg.com/swiper/swiper-bundle.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/css/swiper.css"
+    />
 
     <style type="text/css">
       * {
@@ -197,9 +201,11 @@
         width: 100%;
         height: 100%;
         position: absolute;
-        left: 50%;
-        margin-left: -50%;
+        top: 0px;
+        left: 0px;
+        color: white;
       }
+
       .swiper-wrapper {
         min-width: 100%;
         min-height: 100%;
@@ -324,7 +330,8 @@
         text-align: center;
       }
       #divider {
-        background: url("gold-textured-background.png") no-repeat;
+        background: url("https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/gold-textured-background.png")
+          no-repeat;
       }
       .contact-container {
         display: -webkit-box;
@@ -348,18 +355,18 @@
         height: auto;
       }
       #social-wrapper {
-        position: fixed;
+        position: absolute;
         top: 2%;
         left: 2%;
         z-index: 888;
       }
       #sharebtn {
-        position: fixed;
+        position: absolute;
         top: 2.5%;
         right: 4%;
       }
       #leftarrow {
-        position: fixed;
+        position: absolute;
         bottom: 3%;
         right: 8%;
       }
@@ -382,7 +389,7 @@
         overflow: hidden;
       }
       #white-bar {
-        position: fixed;
+        position: absolute;
         width: 95%;
         background: white;
         top: 65%;
@@ -400,39 +407,39 @@
         transform: translate3d(0px, 0px, 0px) rotate(270deg) !important;
       }
       .white {
-        position: fixed;
+        position: absolute;
         height: auto;
         bottom: 5%;
       }
       .white-btn {
-        position: fixed;
+        position: absolute;
         height: auto;
         bottom: 18%;
       }
       .white-circle {
-        position: fixed;
+        position: absolute;
         height: auto;
         bottom: 28%;
       }
       .rect {
-        position: fixed;
+        position: absolute;
         height: 6%;
         left: 6%;
         bottom: 18%;
       }
       .rect-right {
-        position: fixed;
+        position: absolute;
         height: 6%;
         right: 6%;
         bottom: 18%;
       }
       #leftarrow2 {
-        position: fixed;
+        position: absolute;
         bottom: 3.5%;
         left: 5%;
       }
       #leftarrow2-top {
-        position: fixed;
+        position: absolute;
         top: 3.5%;
         right: 5%;
       }
@@ -504,27 +511,27 @@
         width: 70%;
       }
       #leftarrow3 {
-        position: fixed;
+        position: absolute;
         top: 4%;
         right: 5%;
       }
       #leftarrow3-top {
-        position: fixed;
+        position: absolute;
         bottom: 3.5%;
         left: 5%;
       }
       #leftarrow4 {
-        position: fixed;
+        position: absolute;
         top: 3.5%;
         left: 5%;
       }
       #leftarrow4-top {
-        position: fixed;
+        position: absolute;
         bottom: 3.5%;
         right: 5%;
       }
       #longline {
-        position: fixed;
+        position: absolute;
         width: 0.4%;
         height: 32%;
         top: 10%;
@@ -534,7 +541,7 @@
         transform: rotate(0deg);
       }
       #longline-down {
-        position: fixed;
+        position: absolute;
         width: 0.4%;
         height: 32%;
         bottom: 10%;
@@ -544,13 +551,13 @@
         transform: rotate(0deg);
       }
       .white-circle2 {
-        position: fixed;
+        position: absolute;
         height: auto;
         top: 6%;
         right: 5%;
       }
       .white-circle3 {
-        position: fixed;
+        position: absolute;
         height: auto;
         bottom: 6%;
         left: 5%;
@@ -576,34 +583,34 @@
       #fifth-img-1 {
         overflow: hidden;
         border-radius: 50%;
-        position: fixed;
+        position: absolute;
         top: 2%;
       }
       #fifth-img-2 {
         overflow: hidden;
         border-top-left-radius: 50%;
         border-top-right-radius: 50%;
-        position: fixed;
+        position: absolute;
         bottom: 0;
       }
       .white-circle-fifth {
-        position: fixed;
+        position: absolute;
         height: auto;
 
         top: 42%;
       }
       .white-btn-fifth {
-        position: fixed;
+        position: absolute;
         height: auto;
         top: 33%;
       }
       #leftarrow5 {
-        position: fixed;
+        position: absolute;
         top: 3.5%;
         left: 5%;
       }
       #leftarrow5-top {
-        position: fixed;
+        position: absolute;
         top: 3.5%;
         right: 5%;
       }
@@ -663,7 +670,7 @@
         transition: transform 1s ease-out, -webkit-transform 1s ease-out;
       }
       .share-slide .close-icon {
-        position: fixed;
+        position: absolute;
         top: 4%;
         right: 7%;
       }
@@ -785,12 +792,12 @@
         transform: rotateZ(180deg);
       }
       .lottie-anim {
-        position: fixed;
+        position: absolute;
         bottom: 1.5%;
       }
       .arrow {
         opacity: 0;
-        position: fixed;
+        position: absolute;
         right: 5%;
         bottom: 3%;
         transform-origin: 50% 50%;
@@ -812,7 +819,7 @@
         content: "";
         display: block;
         height: 0.4vw;
-        position: fixed;
+        position: absolute;
         top: 0;
         right: 0;
         width: 4vw;
@@ -954,12 +961,6 @@
     </div>
 
     <!-- Swiper -->
-    <audio id="audio">
-      <source
-        src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/WhatsApp Audio 2021-08-09 at 1.38.11 PM.mpeg"
-        type="audio/mpeg"
-      />
-    </audio>
     <div class="swiper-container">
       <div class="swiper-wrapper">
         <div class="swiper-slide" id="f1">
@@ -1060,7 +1061,12 @@
           </div>
           <div class="arrow arrow-first next tc1" id="arrow-anim1"></div>
           <div class="arrow arrow-second next tc1" id="arrow-anim2"></div>
-
+          <audio id="audio">
+            <source
+              src="https://raw.githubusercontent.com/rohit-virkud/ninohotel/main/WhatsApp Audio 2021-08-09 at 1.38.11 PM.mpeg"
+              type="audio/mpeg"
+            />
+          </audio>
           <div id="social-wrapper" class="tc2">
             <a
               href="https://www.facebook.com/LoungeBeachScaladeiTurchi/"
@@ -1353,24 +1359,26 @@
 
     <!-- Swiper JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.3.1/js/swiper.min.js"></script>
     <!-- Initialize Swiper -->
     <script>
+      /*swiper*/
       var swiper = new Swiper(".swiper-container", {
-        speed: 800,
-        parallax: true,
-        effect: "cube",
+        effect: "coverflow",
+
         grabCursor: true,
-        cubeEffect: {
-          shadow: false,
-          slideShadows: false,
-          shadowOffset: 20,
-          shadowScale: 0.94,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        parallax: true,
+        speed: 900,
+        coverflow: {
+          rotate: -100,
+          stretch: 100,
+          depth: 500,
+          modifier: 1,
+          slideShadows: true,
         },
-        navigation: {
-          nextEl: ".next",
-          prevEl: ".prev",
-        },
+        navigation: { nextEl: ".next", prevEl: ".prev" },
       });
 
       setTimeout(function () {
